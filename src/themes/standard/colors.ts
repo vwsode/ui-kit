@@ -23,4 +23,8 @@ export const UIColors = {
 
 export const Colors = {
   ...UIColors,
+
+  colorTextPrimary: '#242424',
+  colorTextSecondary: '#424242',
+  colorTextTeritary: '#616161',
 };

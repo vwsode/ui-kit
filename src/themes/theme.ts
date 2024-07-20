@@ -29,7 +29,7 @@ export enum Spacing {
   }
   
   export enum Font {
-    Base = 'Segoe UI, sans-serif',
+    Base = 'Inter, Segoe UI, sans-serif',
     Monospace = 'JetBrains Mono, Consolas, Courier',
     Numeric = 'Bahnschrift',
   }
