@@ -4,11 +4,9 @@ import { render, screen } from '@testing-library/react';
 import { Text } from '../Text';
 
 import { ThemeProvider } from '../../../contexts/ThemeContext/ThemeContext';
-import { MOCK_TEXT } from './mocks';
+import { MOCK_TEXT, MOCK_TEXT_TYPES } from './mocks';
 import { TextSelector } from '../constants';
 import { Colors } from '../../../themes/standard/colors';
-import { FontSize, LineHeight } from '../../../themes';
-import { TextType } from '../types';
 
 describe('Text component:', () => {
   it('should render component with text', () => {
@@ -71,17 +69,7 @@ describe('Text component:', () => {
     expect(textElement).toBeInTheDocument();
     expect(textElement).toHaveTextContent(MOCK_TEXT);
 
-    const types: { type: TextType; fontSize: string; lineHeight: string }[] = [
-      { type: 'greeting', fontSize: FontSize.XXL, lineHeight: LineHeight.XXL },
-      { type: 'page', fontSize: FontSize.XL, lineHeight: LineHeight.XL },
-      { type: 'email-header', fontSize: FontSize.L, lineHeight: LineHeight.L },
-      { type: 'page-header', fontSize: FontSize.M, lineHeight: LineHeight.M },
-      { type: 'subject', fontSize: FontSize.S, lineHeight: LineHeight.S },
-      { type: 'button', fontSize: FontSize.XS, lineHeight: LineHeight.XS },
-      { type: 'caption', fontSize: FontSize.XXS, lineHeight: LineHeight.XXS },
-    ];
-
-    types.forEach(({ type, fontSize, lineHeight }) => {
+    MOCK_TEXT_TYPES.forEach(({ type, fontSize, lineHeight }) => {
       rerender(
         <ThemeProvider themeName="standard">
           <Text accent="tertiary" type={type}>
