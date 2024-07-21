@@ -31,7 +31,7 @@ export const fonts = css`
   }
 
   /* JetBrains Mono */
-
+  
   /* cyrillic-ext */
   @font-face {
     font-family: 'JetBrains Mono';

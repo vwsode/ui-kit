@@ -1,4 +1,5 @@
 import { Font, FontSize, FontWeight, LineHeight } from './theme';
+import { css } from 'styled-components';
 
 const defaultStyleText = {
   fontFamily: Font.Base,
@@ -137,3 +138,50 @@ export const displayStyle = {
   fontSize: FontSize.XXXXL,
   lineHeight: LineHeight.XXXXL,
 };
+
+export const defaultText = css`
+  font-family: ${Font.Base};
+  letter-spacing: 0;
+`;
+
+export const textTitle1 = css`
+  ${defaultText}
+  font-size: ${FontSize.XXL};
+  line-height: ${LineHeight.XXL};
+`;
+
+export const textTitle2 = css`
+  ${defaultText}
+  font-size: ${FontSize.XL};
+  line-height: ${LineHeight.XL};
+`;
+
+export const textTitle3 = css`
+  ${defaultText}
+  font-size: ${FontSize.L};
+  line-height: ${LineHeight.L};
+`;
+
+export const textHeadline = css`
+  ${defaultText}
+  font-size: ${FontSize.M};
+  line-height: ${LineHeight.M};
+`;
+
+export const textSubheadline = css`
+  ${defaultText}
+  font-size: ${FontSize.S};
+  line-height: ${LineHeight.S};
+`;
+
+export const textBody = css`
+  ${defaultText}
+  font-size: ${FontSize.XS};
+  line-height: ${LineHeight.XS};
+`;
+
+export const textCaption = css`
+  ${defaultText}
+  font-size: ${FontSize.XXS};
+  line-height: ${LineHeight.XXS};
+`;
