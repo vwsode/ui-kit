@@ -40,7 +40,7 @@ const getTextStyles = (type: TextType) => {
 };
 
 export const StyledText = styled.div.attrs<StyledTextProps>(({ testId }) => ({
-  [TESTING_DATA_ATTRIBUTE]: `${TextSelector.TEXT}${testId && '.' + testId}`,
+  [TESTING_DATA_ATTRIBUTE]: `${TextSelector.TEXT}${testId ? '.' + testId : ''}`,
 }))<StyledTextProps>`
   ${fontSmoothing};
 
