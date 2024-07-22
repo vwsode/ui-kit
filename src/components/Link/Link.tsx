@@ -14,3 +14,5 @@ export const Link: FC<LinkProps> = ({ target, to, children, ...props }) => {
     </StyledLink>
   );
 };
+
+Link.displayName = 'Link';
