@@ -50,6 +50,7 @@
     "lodash": "^4.17.21",
     "storybook": "^8.2.4",
     "styled-components": "^5.3.6",
+    "styled-normalize": "^8.1.1",
     "ts-jest": "^29.2.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.2.2",

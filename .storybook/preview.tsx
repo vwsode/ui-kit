@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import type { Preview } from '@storybook/react';
 
-import { ThemeProvider } from '../src';
+import { GlobalStyles, ThemeProvider } from '../src';
 
 const preview: Preview = {
   parameters: {
@@ -16,7 +16,9 @@ const preview: Preview = {
     (Story: FC) => {
       return (
         <ThemeProvider themeName="standard">
-          <Story />
+          <GlobalStyles>
+            <Story />
+          </GlobalStyles>
         </ThemeProvider>
       );
     },
