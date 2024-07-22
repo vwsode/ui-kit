@@ -25,6 +25,7 @@ const typeTextMap: Record<TextType, FlattenSimpleInterpolation> = {
   'email-header': textTitle3,
   page: textTitle2,
   greeting: textTitle1,
+  link: textBody,
 };
 
 const accnetColorsMap: Record<Accent, keyof typeof Colors> = {
@@ -51,6 +52,11 @@ export const StyledText = styled.div.attrs<StyledTextProps>(({ testId }) => ({
     css`
       color: ${props.theme.colors[accnetColorsMap[props.accent]]};
     `};
+
+    ${props.type === 'link' &&
+    css`
+      color: inherit;
+    `}
 
     ${props.whiteSpace &&
     css`

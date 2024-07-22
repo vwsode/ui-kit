@@ -27,4 +27,8 @@ export const Colors = {
   colorTextPrimary: '#242424',
   colorTextSecondary: '#424242',
   colorTextTeritary: '#616161',
+
+  colorLinkRest: '#5B5FC7',
+  colorLinkHover: '#5B5FC7',
+  colorLinkDisabled: '#C7C7C7',
 };
