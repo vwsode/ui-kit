@@ -3,7 +3,7 @@ import { WithTheme } from '../../types/styles';
 
 export type AsType = keyof JSX.IntrinsicElements | React.ComponentType;
 
-export type TextType = 'greeting' | 'page' | 'email-header' | 'page-header' | 'subject' | 'button' | 'caption';
+export type TextType = 'greeting' | 'page' | 'email-header' | 'page-header' | 'subject' | 'button' | 'caption' | 'link';
 
 export type Accent = 'primary' | 'secondary' | 'tertiary';
 
