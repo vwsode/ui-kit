@@ -37,6 +37,10 @@ export type BaseTextProps = {
    * @see https://developer.mozilla.org/en-US/docs/Web/CSS/word-break
    */
   wordBreak?: WordBreak;
+  /**
+   *
+   */
+  color?: 'inherit';
 } & TestableComponent;
 
 export type TextProps = PropsWithClassName & BaseTextProps;

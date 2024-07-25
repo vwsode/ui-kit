@@ -7,7 +7,6 @@ import translationEN from './uiComponents.en-US.i18n.json';
 import translationRU from './uiComponents.ru-RU.i18n.json';
 
 i18n
-  // Add React bindings as a plugin.
   .use(initReactI18next)
   // Initialize the i18next instance.
   .init({

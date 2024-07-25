@@ -1,4 +1,5 @@
 import React, { HTMLAttributes } from 'react';
+
 import { PropsWithClassName, TestableComponent } from '../../types/controls';
 
 export type LinkBaseProps = {

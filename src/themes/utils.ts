@@ -1,5 +1,5 @@
-import { ThemeNamesType, ThemeType } from './types';
 import { theme as standardTheme } from './standard';
+import { ThemeNamesType, ThemeType } from './types';
 
 const themeMap: Record<'standard', ThemeType> = {
   standard: standardTheme,

@@ -1,11 +1,11 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
-import { Link } from '../Link';
 import { ThemeProvider } from '../../../contexts/ThemeContext';
-
 import { Colors } from '../../../themes/standard/colors';
-import { MOCK_TEXT, MOCK_LINK } from './mocks';
 import { LinkSelector } from '../constants';
+import { Link } from '../Link';
+
+import { MOCK_TEXT, MOCK_LINK } from './mocks';
 
 describe('Link component:', () => {
   it('should render the component with text correctly', () => {
