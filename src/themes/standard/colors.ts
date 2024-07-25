@@ -33,4 +33,11 @@ export const Colors = {
   colorLinkDisabled: '#C7C7C7',
 
   colorTooltipBackground: '#424242',
+
+  colorStatusLabelCriticalBg: '#C4314B',
+  colorStatusLabelCriticalText: '#FFFFFF',
+  colorStatusLabelError: '#C4314B',
+  colorStatusLabelWarning: '#A16114',
+  colorStatusLabelSuccess: '#237B4B',
+  colorStatusLabelInfo: '#252525',
 };
