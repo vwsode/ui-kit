@@ -14,5 +14,5 @@
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true
   },
-  "include": ["vite.config.ts", "src/**/*"]
+  "include": ["vite.config.ts", "src/**/*", "globals.d.ts"]
 }

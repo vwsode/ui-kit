@@ -18,6 +18,7 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    'import/no-unresolved': ['error', { ignore: ['\\.svg\\?react$'] }],
     'import/order': [
       'warn',
       {
