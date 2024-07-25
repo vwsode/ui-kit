@@ -1,9 +1,10 @@
 import styled, { css } from 'styled-components';
 
-import { StyledLinkProps } from './types';
-import { Colors } from '../../themes/standard/colors';
 import { TESTING_DATA_ATTRIBUTE } from '../../constants/TestUtils';
+import { Colors } from '../../themes/standard/colors';
+
 import { LinkSelector } from './constants';
+import { StyledLinkProps } from './types';
 
 export const StyledLink = styled.a.attrs<StyledLinkProps>(({ testId }) => ({
   [TESTING_DATA_ATTRIBUTE]: `${LinkSelector.LINK}${testId ? '.' + testId : ''}`,

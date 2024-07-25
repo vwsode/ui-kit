@@ -2,8 +2,8 @@ import React, { FC } from 'react';
 
 import { Text } from '../Text';
 
-import { LinkProps } from './types';
 import { StyledLink } from './Link.style';
+import { LinkProps } from './types';
 
 export const Link: FC<LinkProps> = ({ target, to, children, ...props }) => {
   return (

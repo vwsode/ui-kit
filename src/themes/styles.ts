@@ -1,9 +1,9 @@
 import { css } from 'styled-components';
 
-import interRegularWoff2 from './fonts/inter-regular.woff2';
-import interRegularWoff from './fonts/inter-regular.woff';
-import interMediumWoff2 from './fonts/Inter-Medium.woff2';
 import interMediumWoff from './fonts/Inter-Medium.woff';
+import interMediumWoff2 from './fonts/Inter-Medium.woff2';
+import interRegularWoff from './fonts/inter-regular.woff';
+import interRegularWoff2 from './fonts/inter-regular.woff2';
 
 export const fonts = css`
   /* Inter */

@@ -1,12 +1,13 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
-
-import { Text } from '../Text';
+import React from 'react';
 
 import { ThemeProvider } from '../../../contexts/ThemeContext/ThemeContext';
-import { MOCK_TEXT, MOCK_TEXT_TYPES } from './mocks';
-import { TextSelector } from '../constants';
 import { Colors } from '../../../themes/standard/colors';
+import { TextSelector } from '../constants';
+import { Text } from '../Text';
+
+import { MOCK_TEXT, MOCK_TEXT_TYPES } from './mocks';
+
 
 describe('Text component:', () => {
   it('should render component with text', () => {

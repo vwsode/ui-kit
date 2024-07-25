@@ -31,4 +31,6 @@ export const Colors = {
   colorLinkRest: '#5B5FC7',
   colorLinkHover: '#5B5FC7',
   colorLinkDisabled: '#C7C7C7',
+
+  colorTooltipBackground: '#424242',
 };

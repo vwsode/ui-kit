@@ -1,5 +1,6 @@
-import { Font, FontSize, FontWeight, LineHeight } from './theme';
 import { css } from 'styled-components';
+
+import { Font, FontSize, FontWeight, LineHeight } from './theme';
 
 const defaultStyleText = {
   fontFamily: Font.Base,

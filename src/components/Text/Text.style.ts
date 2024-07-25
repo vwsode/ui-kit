@@ -1,11 +1,8 @@
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
 
-import { Accent, StyledTextProps, TextType } from './types';
-import { fontSmoothing } from '../../themes/styles';
-import { Colors } from '../../themes/standard/colors';
-
 import { TESTING_DATA_ATTRIBUTE } from '../../constants/TestUtils';
-
+import { Colors } from '../../themes/standard/colors';
+import { fontSmoothing } from '../../themes/styles';
 import {
   textTitle1,
   textTitle2,
@@ -15,7 +12,9 @@ import {
   textBody,
   textCaption,
 } from '../../themes/typography';
+
 import { TextSelector } from './constants';
+import { Accent, StyledTextProps, TextType } from './types';
 
 const typeTextMap: Record<TextType, FlattenSimpleInterpolation> = {
   caption: textCaption,
@@ -52,6 +51,11 @@ export const StyledText = styled.div.attrs<StyledTextProps>(({ testId }) => ({
     css`
       color: ${props.theme.colors[accnetColorsMap[props.accent]]};
     `};
+
+    ${props.color === 'inherit' &&
+    css`
+      color: inherit;
+    `}
 
     ${props.type === 'link' &&
     css`
