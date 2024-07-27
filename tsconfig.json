@@ -10,9 +10,10 @@
     "strict": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "types": ["@testing-library/jest-dom"],
+    "types": ["@testing-library/jest-dom", "vite-plugin-svgr/client"],
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true
   },
-  "include": ["vite.config.ts", "src/**/*", "globals.d.ts"]
+  "include": ["vite.config.ts", "src/**/*"],
+  "files": ["global.d.ts"]
 }

@@ -3,17 +3,20 @@ import styled, { css } from 'styled-components';
 import { TESTING_DATA_ATTRIBUTE } from '../../constants/TestUtils';
 import { BorderRadius, Spacing } from '../../themes';
 import { Colors } from '../../themes/standard/colors';
+import { composeTestingPath } from '../../utils';
 
 import { StatusLabelSelector } from './constants';
 import { StyledStatusLabelProps } from './types';
 
-const colorStatusMap: Record<
+type ColorStatusMapType = Record<
   StyledStatusLabelProps['type'],
   {
     backgroundColor?: string;
     color: string;
   }
-> = {
+>;
+
+const colorStatusMap: ColorStatusMapType = {
   critical: {
     backgroundColor: Colors.colorStatusLabelCriticalBg,
     color: Colors.colorStatusLabelCriticalText,
@@ -40,12 +43,13 @@ const getStatusLabelStyles = (type: StyledStatusLabelProps['type']) => {
 };
 
 export const StyledStatusLabel = styled.div.attrs<StyledStatusLabelProps>(({ testId }) => ({
-  [TESTING_DATA_ATTRIBUTE]: StatusLabelSelector.STATUS_LABEL + testId,
+  [TESTING_DATA_ATTRIBUTE]: composeTestingPath(StatusLabelSelector.STATUS_LABEL, testId),
 }))<StyledStatusLabelProps>`
   ${({ type }) => css`
     display: inline-flex;
     align-items: center;
     gap: ${Spacing.XS};
+    width: fit-content;
 
     ${type === 'critical' &&
     css`
@@ -56,4 +60,3 @@ export const StyledStatusLabel = styled.div.attrs<StyledStatusLabelProps>(({ tes
     ${getStatusLabelStyles(type)};
   `}
 `;
-
