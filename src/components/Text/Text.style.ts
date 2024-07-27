@@ -12,6 +12,7 @@ import {
   textBody,
   textCaption,
 } from '../../themes/typography';
+import { composeTestingPath } from '../../utils';
 
 import { TextSelector } from './constants';
 import { Accent, StyledTextProps, TextType } from './types';
@@ -40,7 +41,7 @@ const getTextStyles = (type: TextType) => {
 };
 
 export const StyledText = styled.div.attrs<StyledTextProps>(({ testId }) => ({
-  [TESTING_DATA_ATTRIBUTE]: `${TextSelector.TEXT}${testId ? '.' + testId : ''}`,
+  [TESTING_DATA_ATTRIBUTE]: composeTestingPath(TextSelector.TEXT, testId),
 }))<StyledTextProps>`
   ${fontSmoothing};
 

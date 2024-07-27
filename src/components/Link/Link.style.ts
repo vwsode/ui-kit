@@ -2,12 +2,13 @@ import styled, { css } from 'styled-components';
 
 import { TESTING_DATA_ATTRIBUTE } from '../../constants/TestUtils';
 import { Colors } from '../../themes/standard/colors';
+import { composeTestingPath } from '../../utils';
 
 import { LinkSelector } from './constants';
 import { StyledLinkProps } from './types';
 
 export const StyledLink = styled.a.attrs<StyledLinkProps>(({ testId }) => ({
-  [TESTING_DATA_ATTRIBUTE]: `${LinkSelector.LINK}${testId ? '.' + testId : ''}`,
+  [TESTING_DATA_ATTRIBUTE]: composeTestingPath(LinkSelector.LINK, testId),
 }))<StyledLinkProps>`
   outline: none;
   text-decoration: none;
