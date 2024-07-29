@@ -186,3 +186,9 @@ export const textCaption = css`
   font-size: ${FontSize.XXS};
   line-height: ${LineHeight.XXS};
 `;
+
+export const textBadge = css`
+  ${defaultText}
+  font-size: ${FontSize.XXS};
+  line-height: ${LineHeight.XXXXS};
+`;

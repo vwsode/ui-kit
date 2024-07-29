@@ -1,3 +1,5 @@
+import { hexToRGB } from '../../utils/hexToRgb';
+
 export const UIColors = {
   colorBrandUI1: '#3D3E78',
   colorBrandUI2: '#444791',
@@ -40,4 +42,25 @@ export const Colors = {
   colorStatusLabelWarning: '#A16114',
   colorStatusLabelSuccess: '#237B4B',
   colorStatusLabelInfo: '#252525',
+
+  /**
+   * Badge colors.
+   */
+  colorBadgeDefaultBg: hexToRGB('#091E42', 0.6),
+  colorBadgeDefaultText: '#172B4D',
+
+  colorBadgePrimaryBg: '#0C66E4',
+  colorBadgePrimaryText: '#FFFFFF',
+
+  colorBadgePrimaryInvertBg: '#FFFFFF',
+  colorBadgePrimaryInvertText: '#0C66E4',
+
+  colorBadgeImportantBg: '#C9372C',
+  colorBadgeImportantText: '#FFFFFF',
+
+  colorBadgeAddedBg: '#DCFFF1',
+  colorBadgeAddedText: '#216E4E',
+
+  colorBadgeRemovedBg: '#FFECEB',
+  colorBadgeRemovedText: '#AE2E24',
 };
