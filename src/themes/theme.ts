@@ -14,7 +14,8 @@ export enum Spacing {
 
 export enum BorderRadius {
   NONE = '0px',
-  SMALL = '2px',
+  X_SMALL = '2px',
+  SMALL = '3px',
   MEDIUM = '4px',
   LARGE = '6px',
   X_LARGE = '8px',

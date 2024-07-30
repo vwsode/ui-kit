@@ -1,15 +1,45 @@
-import { Badge } from './components/Badge';
+import { GlobalStyles } from './components/GlobalStyles';
+import { Lozenge } from './components/Lozenge';
 import { ThemeProvider } from './contexts/ThemeContext/ThemeContext';
 
 function App() {
   return (
     <ThemeProvider themeName="standard">
-      <Badge value={100} appearance="default" />
-      <Badge value={25} max={24} appearance="primary" />
-      <Badge value={100} max={false} appearance="primary-inverted" />
-      <Badge value={25} appearance="important" />
-      <Badge value={25} appearance="added" />
-      <Badge value={25} appearance="removed" />
+      <GlobalStyles>
+        <div>
+          <Lozenge appearance="default">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic accusamus fuga, nisi dolor officiis iste
+            cupiditate et minus obcaecati soluta.
+          </Lozenge>
+          <Lozenge appearance="inprogress">Label</Lozenge>
+          <Lozenge appearance="moved">Label</Lozenge>
+          <Lozenge appearance="new">Label</Lozenge>
+          <Lozenge appearance="removed">Label</Lozenge>
+          <Lozenge appearance="success" maxWidth={20}>
+            Label
+          </Lozenge>
+        </div>
+        <div>
+          <Lozenge isBold={true} appearance="default">
+            Label
+          </Lozenge>
+          <Lozenge isBold={true} appearance="inprogress">
+            Label
+          </Lozenge>
+          <Lozenge isBold={true} appearance="moved">
+            Label
+          </Lozenge>
+          <Lozenge isBold={true} appearance="new">
+            Label
+          </Lozenge>
+          <Lozenge isBold={true} appearance="removed">
+            Label
+          </Lozenge>
+          <Lozenge isBold={true} appearance="success">
+            Label
+          </Lozenge>
+        </div>
+      </GlobalStyles>
     </ThemeProvider>
   );
 }
