@@ -48,19 +48,42 @@ export const Colors = {
    */
   colorBadgeDefaultBg: hexToRGB('#091E42', 0.6),
   colorBadgeDefaultText: '#172B4D',
-
   colorBadgePrimaryBg: '#0C66E4',
   colorBadgePrimaryText: '#FFFFFF',
-
   colorBadgePrimaryInvertBg: '#FFFFFF',
   colorBadgePrimaryInvertText: '#0C66E4',
-
   colorBadgeImportantBg: '#C9372C',
   colorBadgeImportantText: '#FFFFFF',
-
   colorBadgeAddedBg: '#DCFFF1',
   colorBadgeAddedText: '#216E4E',
-
   colorBadgeRemovedBg: '#FFECEB',
   colorBadgeRemovedText: '#AE2E24',
+
+  /**
+   * Lozenge colors.
+   */
+  colorLozengeDefault: hexToRGB('#091E42', 0.06),
+  colorLozengeDefaultText: '#44546F',
+  colorLozengeInprogress: '#E9F2FF',
+  colorLozengeInprogressText: '#0055CC',
+  colorLozengeMoved: '#FFF7D6',
+  colorLozengeMovedText: '#A54800',
+  colorLozengeNew: '#F3F0FF',
+  colorLozengeNewText: '#5E4DB2',
+  colorLozengeRemoved: '#FFECEB ',
+  colorLozengeRemovedText: '#AE2E24',
+  colorLozengeSuccess: '#DCFFF1',
+  colorLozengeSuccessText: '#216E4E',
+  colorLozengeBoldDefault: '#44546F',
+  colorLozengeBoldDefaultText: '#FFFFFF',
+  colorLozengeBoldInprogress: '#0C66E4',
+  colorLozengeBoldInprogressText: '#FFFFFF',
+  colorLozengeBoldMoved: '#F5CD47',
+  colorLozengeBoldMovedText: '#172B4D',
+  colorLozengeBoldNew: '#6E5DC6',
+  colorLozengeBoldNewText: '#FFFFFF',
+  colorLozengeBoldRemoved: '#C9372C ',
+  colorLozengeBoldRemovedText: '#FFFFFF',
+  colorLozengeBoldSuccess: '#1F845A',
+  colorLozengeBoldSuccessText: '#FFFFFF',
 };

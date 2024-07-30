@@ -192,3 +192,10 @@ export const textBadge = css`
   font-size: ${FontSize.XXS};
   line-height: ${LineHeight.XXXXS};
 `;
+
+export const textLozenge = css`
+  ${defaultText}
+  font-size: 11px;
+  line-height: ${LineHeight.XXS};
+  font-weight: ${FontWeight.Bold};
+`;
