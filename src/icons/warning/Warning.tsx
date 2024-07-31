@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import { IconBaseProps, IconSize } from '../types';
 
-const iconSizes: Record<IconSize, JSX.Element> = {
+const iconSizes: Partial<Record<IconSize, JSX.Element>> = {
   16: (
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
