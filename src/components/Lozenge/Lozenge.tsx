@@ -10,3 +10,5 @@ export const Lozenge: FC<LozengeProps> = ({ children, maxWidth = 200, ...props }
     </StyledLozenge>
   );
 };
+
+Lozenge.displayName = 'Lozenge';

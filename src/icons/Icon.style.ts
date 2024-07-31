@@ -7,10 +7,11 @@ import { IconProps } from './types';
 export const IconWrapper = styled.i.attrs<IconProps>(({ testId }) => ({
   [TESTING_DATA_ATTRIBUTE]: testId,
 }))<IconProps>`
-  ${({ size }) => css`
+  ${({ size, fill }) => css`
     display: inline-block;
     line-height: 0;
     width: ${size}px;
     height: ${size}px;
+    color: ${fill};
   `}
 `;

@@ -86,4 +86,9 @@ export const Colors = {
   colorLozengeBoldRemovedText: '#FFFFFF',
   colorLozengeBoldSuccess: '#1F845A',
   colorLozengeBoldSuccessText: '#FFFFFF',
+
+  /**
+   * Spinner
+   */
+  colorSpinner: '#626F86',
 };
