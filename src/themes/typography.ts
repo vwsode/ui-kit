@@ -199,3 +199,9 @@ export const textLozenge = css`
   line-height: ${LineHeight.XXS};
   font-weight: ${FontWeight.Bold};
 `;
+
+export const textBanner = css`
+  ${defaultText}
+  font-size: ${FontSize.XS};
+  line-height: ${LineHeight.XS};;
+`;

@@ -1,17 +1,24 @@
+import { Banner } from './components/Banner';
 import { GlobalStyles } from './components/GlobalStyles';
-import { Spinner } from './components/Spinner';
 import { ThemeProvider } from './contexts/ThemeContext/ThemeContext';
+import { Icon } from './icons';
 
 function App() {
   return (
     <ThemeProvider themeName="standard">
       <GlobalStyles>
         <div>
-          <Spinner size="xsmall" />
-          <Spinner size="small" />
-          <Spinner size="medium" />
-          <Spinner size="large" />
-          <Spinner size="xlarge" />
+          <Banner appearance="announcement">Lorem</Banner>
+
+          <Banner appearance="warning" icon={<Icon type="warning" size={20} />}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur eos minima fugit asperiores sapiente
+            dolor nihil qui totam harum sed?
+          </Banner>
+
+          <Banner appearance="error" icon={<Icon type="warning" size={20} />}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur eos minima fugit asperiores sapiente
+            dolor nihil qui totam harum sed?
+          </Banner>
         </div>
       </GlobalStyles>
     </ThemeProvider>
