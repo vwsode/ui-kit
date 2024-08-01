@@ -88,7 +88,19 @@ export const Colors = {
   colorLozengeBoldSuccessText: '#FFFFFF',
 
   /**
-   * Spinner
+   * Spinner colors.
    */
   colorSpinner: '#626F86',
+
+  /**
+   * Banner colors.
+   */
+  colorBannerWarning: '#F5CD47',
+  colorBannerWarningText: '#172B4D',
+
+  colorBannerError: '#C9372C',
+  colorBannerErrorText: '#FFFFFF',
+
+  colorBannerAnnouncement: '#44546F',
+  colorBannerAnnouncementText: '#FFFFFF',
 };
