@@ -103,4 +103,14 @@ export const Colors = {
 
   colorBannerAnnouncement: '#44546F',
   colorBannerAnnouncementText: '#FFFFFF',
+
+  /**
+   * Tabs colors.
+   */
+  colorTabSelected: '#0C66E4',
+  colorTabText: '#44546F',
+  colorTabTextPress: '#172B4D',
+  colorTabHover: hexToRGB('#091E42', 0.086),
+
+  colorTabsBorder: hexToRGB('#091E42', 0.086),
 };

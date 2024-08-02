@@ -203,5 +203,12 @@ export const textLozenge = css`
 export const textBanner = css`
   ${defaultText}
   font-size: ${FontSize.XS};
-  line-height: ${LineHeight.XS};;
+  line-height: ${LineHeight.XS};
+`;
+
+export const textTab = css`
+  ${defaultText}
+  font-size: ${FontSize.XS};
+  line-height: ${LineHeight.M};
+  font-weight: ${FontWeight.Bold};
 `;
