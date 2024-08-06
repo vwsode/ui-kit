@@ -113,4 +113,16 @@ export const Colors = {
   colorTabHover: hexToRGB('#091E42', 0.086),
 
   colorTabsBorder: hexToRGB('#091E42', 0.086),
+
+  /**
+   * ProgressBar colors.
+   */
+  colorProgressBarDefaultBg: hexToRGB('#091E42', 0.06),
+  colorProgressBarDefaultProgress: '#44546F',
+
+  colorProgressBarInverseBg: hexToRGB('#000000', 0.16),
+  colorProgressBarInverseProgress: '#FFFFFF',
+
+  colorProgressBarSuccessBg: '#1F845A',
+  colorProgressBarSuccessProgress: '#1F845A',
 };
