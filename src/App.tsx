@@ -1,16 +1,23 @@
+import React from 'react';
 import { GlobalStyles } from './components/GlobalStyles';
-import { ProgressBar } from './components/ProgressBar';
+import { Range } from './components/Range';
 import { ThemeProvider } from './contexts/ThemeContext/ThemeContext';
 
 function App() {
+  const [value, setValue] = React.useState<number>(0);
+
   return (
     <ThemeProvider themeName="standard">
       <GlobalStyles>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-          <ProgressBar value={10} />
-          <ProgressBar value={50} appearance="inverse" />
-          <ProgressBar value={100} appearance="success" />
-          <ProgressBar isIndeterminate />
+        <div
+          style={{
+            margin: '0 auto',
+            maxWidth: '1920px',
+            width: '956px',
+          }}
+        >
+          <Range onChange={(value) => setValue(value)} value={value} max={1000} step={1} />
+          <Range value={500} max={1000} isDisabled step={1} />
         </div>
       </GlobalStyles>
     </ThemeProvider>
