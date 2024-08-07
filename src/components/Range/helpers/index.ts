@@ -1,0 +1,1 @@
+export { getRoundedPercentValue } from './getRoundedPercentValue';

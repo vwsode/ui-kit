@@ -125,4 +125,22 @@ export const Colors = {
 
   colorProgressBarSuccessBg: '#1F845A',
   colorProgressBarSuccessProgress: '#1F845A',
+
+  /**
+   * Range colors.
+   */
+  colorRangeTrackDefault: hexToRGB('#091E42', 0.06),
+  colorRangeTrackHover: hexToRGB('#091E42', 0.16),
+  colorRangeTrackPress: hexToRGB('#091E42', 0.29),
+  colorRangeTrackDisabled: hexToRGB('#091E42', 0.06),
+
+  colorRangeSliderDefault: '#44546F',
+  colorRangeSliderHover: '#2C3E5D',
+  colorRangeSliderPress: '#172B4D',
+
+  colorRangeThumbDefault: '#44546F',
+  colorRangeThumbHover: '#2C3E5D',
+  colorRangeThumbPress: '#172B4D',
+  colorRangeThumbDisabled: '#44546F',
+  colorRangeThumbFocusRing: '#388BFF',
 };
