@@ -143,4 +143,38 @@ export const Colors = {
   colorRangeThumbPress: '#172B4D',
   colorRangeThumbDisabled: '#44546F',
   colorRangeThumbFocusRing: '#388BFF',
+
+  /**
+   * =============================================
+   * =============================================
+   * =============================================
+   */
+
+  /**
+   * Text colors.
+   */
+  colorTextDefault: '#172B4D',
+
+  /**
+   * Border colors.
+   */
+  colorBorderInput: hexToRGB('#091E42', 0.14),
+  colorBorderFocused: '#388BFF',
+  colorBorderDisabled: hexToRGB('#091E42', 0.06),
+  colorBorderDanger: '#E2483D',
+
+  /**
+   * Icon colors.
+   */
+  colorIconDisabled: hexToRGB('#091E42', 0.31),
+  colorIconInverse: '#FFFFFF',
+
+  /**
+   * Background colors.
+   */
+  colorBackgroundDisabled: hexToRGB('#091E42', 0.03),
+  colorBackgroundSelectedBold: '#0C66E4',
+  colorBackgroundInputDefault: '#FFFFFF',
+  colorBackgroundInputHover: '#F7F8F9',
+  colorBackgroundInputPress: '#FFFFFF',
 };
