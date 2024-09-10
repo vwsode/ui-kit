@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 
-import { Input, Label, Wrapper, Text } from './Radio.style.ts';
+import { Input, Label, Text, Wrapper } from './Radio.style.ts';
 import { RadioProps } from './types';
 
 export const Radio = forwardRef<HTMLInputElement, RadioProps>(
