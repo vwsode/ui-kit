@@ -22,10 +22,10 @@ function App() {
             width: '956px',
           }}
         >
-          <Toggle isChecked={value} onChange={handleChange} />
-          <Toggle isDisabled />
-          <Toggle isDisabled size="large" />
-          <Toggle isChecked={value} onChange={handleChange} size="large" />
+          <Toggle testId="Form" isChecked={value} onChange={handleChange} />
+          <Toggle testId="Form" isDisabled />
+          <Toggle testId="Form" isDisabled size="large" />
+          <Toggle testId="Form" isChecked={value} onChange={handleChange} size="large" />
         </div>
       </GlobalStyles>
     </ThemeProvider>
