@@ -82,6 +82,11 @@ export enum Layer {
   Tooltip = 100000,
 }
 
+export enum Duration {
+  Quick = 100,
+  Default = 250,
+}
+
 export enum Shadow {
   XS = '0px 1px 2px rgba(0, 0, 0, 0.14), 0px 0px 2px rgba(0, 0, 0, 0.12)',
   S = '0px 2px 4px rgba(0, 0, 0, 0.14), 0px 0px 2px rgba(0, 0, 0, 0.12)',

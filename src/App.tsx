@@ -1,10 +1,16 @@
 import React from 'react';
+
 import { GlobalStyles } from './components/GlobalStyles';
 import { Range } from './components/Range';
+import { Toggle } from './components/Toggle';
 import { ThemeProvider } from './contexts/ThemeContext/ThemeContext';
 
 function App() {
-  const [value, setValue] = React.useState<number>(0);
+  const [value, setValue] = React.useState<boolean>(false);
+
+  const handleChange = () => {
+    setValue((prev) => !prev);
+  };
 
   return (
     <ThemeProvider themeName="standard">
@@ -16,8 +22,10 @@ function App() {
             width: '956px',
           }}
         >
-          <Range onChange={(value) => setValue(value)} value={value} max={1000} step={1} />
-          <Range value={500} max={1000} isDisabled step={1} />
+          <Toggle isChecked={value} onChange={handleChange} />
+          <Toggle isDisabled />
+          <Toggle isDisabled size="large" />
+          <Toggle isChecked={value} onChange={handleChange} size="large" />
         </div>
       </GlobalStyles>
     </ThemeProvider>

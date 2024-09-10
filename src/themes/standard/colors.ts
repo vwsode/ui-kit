@@ -172,9 +172,19 @@ export const Colors = {
   /**
    * Background colors.
    */
+  colorBackgroundNeutralDefault: '',
+  colorBackgroundNeutralHover: '',
+  colorBackgroundNeutralPress: '',
+
+  colorBackgroundNeutralBoldDefault: '#44546F',
+  colorBackgroundNeutralBoldHover: '#2C3E5D',
+  colorBackgroundNeutralBoldPress: '#172B4D',
+
   colorBackgroundDisabled: hexToRGB('#091E42', 0.03),
   colorBackgroundSelectedBold: '#0C66E4',
   colorBackgroundInputDefault: '#FFFFFF',
   colorBackgroundInputHover: '#F7F8F9',
   colorBackgroundInputPress: '#FFFFFF',
+  colorBackgroundSuccessBoldDefault: '#1F845A',
+  colorBackgroundSuccessBoldHover: '#216E4E',
 };
