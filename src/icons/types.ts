@@ -1,6 +1,13 @@
 import { PropsWithClassName, TestableComponent } from '../types/controls';
 
-export type IconVariant = 'checkrmark-circle' | 'error-circle' | 'warning' | 'spinner' | 'editor-close' | 'editor-done';
+export type IconVariant =
+  'checkrmark-circle'
+  | 'error-circle'
+  | 'warning'
+  | 'spinner'
+  | 'editor-close'
+  | 'editor-done'
+  | 'more';
 
 export type IconSize = 8 | 16 | 20 | 24 | 48 | 96;
 
