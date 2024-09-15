@@ -5,21 +5,38 @@ import { Spinner } from '@/components/Spinner';
 import { Icon, IconVariant } from '@/icons';
 
 import { Root } from './Button.style.ts';
-import { ButtonIconSpacingMap } from './constants.ts';
-import { BaseButtonProps } from './types.ts';
+import { ButtonIconSpacingMap, ButtonSelector } from './constants.ts';
+
+import type { BaseButtonProps } from './types.ts';
 
 export const Button: FC<BaseButtonProps> = ({
-  children,
-  icon,
-  spacing = 'default',
-  appearance = 'default',
-  fullWidth = false,
-  isDisabled = false,
-  iconOnly = false,
-  isSelected = false,
-  isLoading = false,
-  testId,
-}) => {
+                                              children,
+                                              icon,
+                                              spacing = 'default',
+                                              appearance = 'default',
+                                              fullWidth = false,
+                                              isDisabled = false,
+                                              iconOnly = false,
+                                              isSelected = false,
+                                              isLoading = false,
+                                              testId,
+                                              ...props
+                                            }) => {
+
+  const renderContent = () => {
+    if (isLoading) {
+      return <Spinner testId={ButtonSelector.BUTTON_SPINNER} size={ButtonIconSpacingMap[spacing]} />;
+    }
+
+    if (icon) {
+      return isString(icon)
+        ? <Icon testId={ButtonSelector.BUTTON_ICON} type={icon as IconVariant} size={24} />
+        : icon;
+    }
+
+    return children;
+  };
+
   return (
     <Root
       fullWidth={fullWidth}
@@ -30,9 +47,10 @@ export const Button: FC<BaseButtonProps> = ({
       appearance={appearance}
       spacing={spacing}
       testId={testId}
+      disabled={isDisabled}
+      {...props}
     >
-      {isLoading ? <Spinner size={ButtonIconSpacingMap[spacing]} /> : children}
-      {!isLoading && (isString(icon) ? <Icon type={icon as IconVariant} size={24} /> : icon)}
+      {renderContent()}
     </Root>
   );
 };

@@ -27,34 +27,34 @@ const getSpacingStyles = (spacing: ButtonSpacing, iconOnly: boolean) => {
   switch (spacing) {
     case 'default': {
       return css`
-        ${textButton};
-        padding: ${Spacing.S_NUDGE} ${Spacing.M};
-        border-radius: ${BorderRadius.SMALL};
-        height: ${ButtonDefault.Height};
+          ${textButton};
+          padding: ${Spacing.S_NUDGE} ${Spacing.M};
+          border-radius: ${BorderRadius.SMALL};
+          height: ${ButtonDefault.Height};
 
-        ${iconOnly &&
-        css`
-          padding: ${Spacing.XS};
-        `}
+          ${iconOnly &&
+          css`
+              padding: ${Spacing.XS};
+          `}
       `;
     }
     case 'compact': {
       return css`
-        ${textButton};
-        padding: ${Spacing.XXS} ${Spacing.M};
-        border-radius: ${BorderRadius.SMALL};
-        height: ${ButtonCompact.Height};
+          ${textButton};
+          padding: ${Spacing.XXS} ${Spacing.M};
+          border-radius: ${BorderRadius.SMALL};
+          height: ${ButtonCompact.Height};
 
-        ${iconOnly &&
-        css`
-          padding: 0 ${Spacing.XS};
-        `}
+          ${iconOnly &&
+          css`
+              padding: 0 ${Spacing.XS};
+          `}
       `;
     }
     case 'none': {
       return css`
-        ${textButton};
-        height: ${ButtonNone.Height};
+          ${textButton};
+          height: ${ButtonNone.Height};
       `;
     }
   }
@@ -72,196 +72,196 @@ const getAppearanceStyles = (
   switch (appearance) {
     case 'default': {
       return css`
-        background-color: ${colors.colorBackgroundNeutralDefault};
-        color: ${colors.colorTextDefault};
+          background-color: ${colors.colorBackgroundNeutralDefault};
+          color: ${colors.colorTextDefault};
 
-        &:hover {
-          background-color: ${colors.colorBackgroundNeutralHover};
-        }
-
-        &:active {
-          background-color: ${colors.colorBackgroundNeutralPress};
-        }
-
-        ${isLoading &&
-        css`
-          cursor: wait;
-
-          &:hover,
-          &:active {
-            background-color: ${theme.colors.colorBackgroundNeutralDefault};
+          &:hover {
+              background-color: ${colors.colorBackgroundNeutralHover};
           }
-        `}
+
+          &:active {
+              background-color: ${colors.colorBackgroundNeutralPress};
+          }
+
+          ${isLoading &&
+          css`
+              cursor: wait;
+
+              &:hover,
+              &:active {
+                  background-color: ${colors.colorBackgroundNeutralDefault};
+              }
+          `}
       `;
     }
     case 'primary': {
       return css`
-        background-color: ${colors.colorBackgroundBrandBoldDefault};
-        color: ${colors.colorTextInverse};
-
-        ${IconWrapper} {
+          background-color: ${colors.colorBackgroundBrandBoldDefault};
           color: ${colors.colorTextInverse};
-        }
 
-        &:hover {
-          background-color: ${colors.colorBackgroundBrandBoldHover};
-        }
-
-        &:active {
-          background-color: ${colors.colorBackgroundBrandBoldPress};
-        }
-
-        ${isLoading &&
-        css`
-          cursor: wait;
-
-          &:hover,
-          &:active {
-            background-color: ${theme.colors.colorBackgroundBrandBoldDefault};
+          ${IconWrapper} {
+              color: ${colors.colorTextInverse};
           }
-        `}
+
+          &:hover {
+              background-color: ${colors.colorBackgroundBrandBoldHover};
+          }
+
+          &:active {
+              background-color: ${colors.colorBackgroundBrandBoldPress};
+          }
+
+          ${isLoading &&
+          css`
+              cursor: wait;
+
+              &:hover,
+              &:active {
+                  background-color: ${colors.colorBackgroundBrandBoldDefault};
+              }
+          `}
       `;
     }
     case 'subtle': {
       return css`
-        background-color: transparent;
-        color: ${colors.colorTextDefault};
-
-        ${IconWrapper} {
+          background-color: transparent;
           color: ${colors.colorTextDefault};
-        }
 
-        &:hover {
-          background-color: ${colors.colorBackgroundNeutralSubtleHover};
-        }
-
-        &:active {
-          background-color: ${colors.colorBackgroundNeutralSubtlePress};
-        }
-
-        ${isLoading &&
-        css`
-          cursor: wait;
-
-          &:hover,
-          &:active {
-            background-color: transparent;
+          ${IconWrapper} {
+              color: ${colors.colorTextDefault};
           }
-        `}
+
+          &:hover {
+              background-color: ${colors.colorBackgroundNeutralSubtleHover};
+          }
+
+          &:active {
+              background-color: ${colors.colorBackgroundNeutralSubtlePress};
+          }
+
+          ${isLoading &&
+          css`
+              cursor: wait;
+
+              &:hover,
+              &:active {
+                  background-color: transparent;
+              }
+          `}
       `;
     }
     case 'link': {
       return css`
-        background-color: transparent;
-        color: ${colors.colorLinkDefault};
-
-        ${IconWrapper} {
+          background-color: transparent;
           color: ${colors.colorLinkDefault};
-        }
 
-        &:hover {
-          text-decoration: underline;
-        }
-
-        &:active {
-          color: ${colors.colorLinkPress};
-          text-decoration: underline;
-        }
-
-        ${isLoading &&
-        css`
-          cursor: wait;
-
-          &:hover,
-          &:active {
-            background-color: transparent;
+          ${IconWrapper} {
+              color: ${colors.colorLinkDefault};
           }
-        `}
+
+          &:hover {
+              text-decoration: underline;
+          }
+
+          &:active {
+              color: ${colors.colorLinkPress};
+              text-decoration: underline;
+          }
+
+          ${isLoading &&
+          css`
+              cursor: wait;
+
+              &:hover,
+              &:active {
+                  background-color: transparent;
+              }
+          `}
       `;
     }
     case 'subtle-link': {
       return css`
-        background-color: transparent;
-        color: ${colors.colorTextSubtle};
-
-        ${IconWrapper} {
+          background-color: transparent;
           color: ${colors.colorTextSubtle};
-        }
 
-        &:hover {
-          text-decoration: underline;
-        }
-
-        &:active {
-          color: ${colors.colorTextDefault};
-          text-decoration: underline;
-        }
-
-        ${isLoading &&
-        css`
-          cursor: wait;
-
-          &:hover,
-          &:active {
-            background-color: transparent;
+          ${IconWrapper} {
+              color: ${colors.colorTextSubtle};
           }
-        `}
+
+          &:hover {
+              text-decoration: underline;
+          }
+
+          &:active {
+              color: ${colors.colorTextDefault};
+              text-decoration: underline;
+          }
+
+          ${isLoading &&
+          css`
+              cursor: wait;
+
+              &:hover,
+              &:active {
+                  background-color: transparent;
+              }
+          `}
       `;
     }
     case 'warning': {
       return css`
-        background-color: ${colors.colorBackgroundWarningBoldDefault};
-        color: ${colors.colorTextWarningInverse};
+          background-color: ${colors.colorBackgroundWarningBoldDefault};
+          color: ${colors.colorTextWarningInverse};
 
-        ${IconWrapper} {
-          color: ${colors.colorIconWarningInverse};
-        }
-
-        &:hover {
-          background-color: ${colors.colorBackgroundWarningBoldHover};
-        }
-
-        &:active {
-          background-color: ${colors.colorBackgroundWarningBoldPress};
-        }
-
-        ${isLoading &&
-        css`
-          cursor: wait;
-
-          &:hover,
-          &:active {
-            background-color: ${theme.colors.colorBackgroundWarningBoldDefault};
+          ${IconWrapper} {
+              color: ${colors.colorIconWarningInverse};
           }
-        `}
+
+          &:hover {
+              background-color: ${colors.colorBackgroundWarningBoldHover};
+          }
+
+          &:active {
+              background-color: ${colors.colorBackgroundWarningBoldPress};
+          }
+
+          ${isLoading &&
+          css`
+              cursor: wait;
+
+              &:hover,
+              &:active {
+                  background-color: ${colors.colorBackgroundWarningBoldDefault};
+              }
+          `}
       `;
     }
     case 'danger': {
       return css`
-        background-color: ${colors.colorBackgroundDangerBoldDefault};
-        color: ${colors.colorTextInverse};
-
-        ${IconWrapper} {
+          background-color: ${colors.colorBackgroundDangerBoldDefault};
           color: ${colors.colorTextInverse};
-        }
 
-        &:hover {
-          background-color: ${colors.colorBackgroundDangerBoldHover};
-        }
-
-        &:active {
-          background-color: ${colors.colorBackgroundDangerBoldPress};
-        }
-
-        ${isLoading &&
-        css`
-          cursor: wait;
-
-          &:hover,
-          &:active {
-            background-color: ${theme.colors.colorBackgroundDangerBoldDefault};
+          ${IconWrapper} {
+              color: ${colors.colorTextInverse};
           }
-        `}
+
+          &:hover {
+              background-color: ${colors.colorBackgroundDangerBoldHover};
+          }
+
+          &:active {
+              background-color: ${colors.colorBackgroundDangerBoldPress};
+          }
+
+          ${isLoading &&
+          css`
+              cursor: wait;
+
+              &:hover,
+              &:active {
+                  background-color: ${colors.colorBackgroundDangerBoldDefault};
+              }
+          `}
       `;
     }
   }
@@ -292,11 +292,19 @@ export const Root = styled.button.attrs<ButtonProps>(({ testId }) => ({
         outline-offset: 2px;
     }
 
+    ${({ fullWidth }) => fullWidth && css`
+        width: 100%;
+    `}
+
     ${({ isSelected, theme }) =>
             isSelected &&
             css`
                 background-color: ${theme.colors.colorBackgroundSelectedDefault};
                 color: ${theme.colors.colorTextSelected};
+
+                ${IconWrapper} {
+                    color: ${theme.colors.colorTextSelected};
+                }
 
                 &:hover,
                 &:active {
@@ -312,6 +320,10 @@ export const Root = styled.button.attrs<ButtonProps>(({ testId }) => ({
                 background-color: ${theme.colors.colorBackgroundDisabled};
                 color: ${theme.colors.colorTextDisabled};
                 cursor: not-allowed;
+
+                ${IconWrapper} {
+                    color: ${theme.colors.colorTextDisabled};
+                }
 
                 &:hover,
                 &:active {

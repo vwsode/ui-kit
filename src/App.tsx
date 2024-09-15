@@ -32,7 +32,7 @@ function App() {
           <Toggle testId="Form" isDisabled size="large" />
           <Toggle testId="Form" isChecked={value} onChange={handleChange} size="large" />
 
-          <Button>Button</Button>
+          <Button onClick={() => console.log('click')}>Button</Button>
           <Button spacing="compact">
             <Icon type="editor-close" size={24} />
             Button
