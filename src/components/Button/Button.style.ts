@@ -27,34 +27,34 @@ const getSpacingStyles = (spacing: ButtonSpacing, iconOnly: boolean) => {
   switch (spacing) {
     case 'default': {
       return css`
-          ${textButton};
-          padding: ${Spacing.S_NUDGE} ${Spacing.M};
-          border-radius: ${BorderRadius.SMALL};
-          height: ${ButtonDefault.Height};
+        ${textButton};
+        padding: ${Spacing.S_NUDGE} ${Spacing.M};
+        border-radius: ${BorderRadius.SMALL};
+        height: ${ButtonDefault.Height};
 
-          ${iconOnly &&
-          css`
-              padding: ${Spacing.XS};
-          `}
+        ${iconOnly &&
+        css`
+          padding: ${Spacing.XS};
+        `}
       `;
     }
     case 'compact': {
       return css`
-          ${textButton};
-          padding: ${Spacing.XXS} ${Spacing.M};
-          border-radius: ${BorderRadius.SMALL};
-          height: ${ButtonCompact.Height};
+        ${textButton};
+        padding: ${Spacing.XXS} ${Spacing.M};
+        border-radius: ${BorderRadius.SMALL};
+        height: ${ButtonCompact.Height};
 
-          ${iconOnly &&
-          css`
-              padding: 0 ${Spacing.XS};
-          `}
+        ${iconOnly &&
+        css`
+          padding: 0 ${Spacing.XS};
+        `}
       `;
     }
     case 'none': {
       return css`
-          ${textButton};
-          height: ${ButtonNone.Height};
+        ${textButton};
+        height: ${ButtonNone.Height};
       `;
     }
   }
@@ -72,196 +72,196 @@ const getAppearanceStyles = (
   switch (appearance) {
     case 'default': {
       return css`
-          background-color: ${colors.colorBackgroundNeutralDefault};
-          color: ${colors.colorTextDefault};
+        background-color: ${colors.colorBackgroundNeutralDefault};
+        color: ${colors.colorTextDefault};
 
-          &:hover {
-              background-color: ${colors.colorBackgroundNeutralHover};
-          }
+        &:hover {
+          background-color: ${colors.colorBackgroundNeutralHover};
+        }
 
+        &:active {
+          background-color: ${colors.colorBackgroundNeutralPress};
+        }
+
+        ${isLoading &&
+        css`
+          cursor: wait;
+
+          &:hover,
           &:active {
-              background-color: ${colors.colorBackgroundNeutralPress};
+            background-color: ${colors.colorBackgroundNeutralDefault};
           }
-
-          ${isLoading &&
-          css`
-              cursor: wait;
-
-              &:hover,
-              &:active {
-                  background-color: ${colors.colorBackgroundNeutralDefault};
-              }
-          `}
+        `}
       `;
     }
     case 'primary': {
       return css`
-          background-color: ${colors.colorBackgroundBrandBoldDefault};
+        background-color: ${colors.colorBackgroundBrandBoldDefault};
+        color: ${colors.colorTextInverse};
+
+        ${IconWrapper} {
           color: ${colors.colorTextInverse};
+        }
 
-          ${IconWrapper} {
-              color: ${colors.colorTextInverse};
-          }
+        &:hover {
+          background-color: ${colors.colorBackgroundBrandBoldHover};
+        }
 
-          &:hover {
-              background-color: ${colors.colorBackgroundBrandBoldHover};
-          }
+        &:active {
+          background-color: ${colors.colorBackgroundBrandBoldPress};
+        }
 
+        ${isLoading &&
+        css`
+          cursor: wait;
+
+          &:hover,
           &:active {
-              background-color: ${colors.colorBackgroundBrandBoldPress};
+            background-color: ${colors.colorBackgroundBrandBoldDefault};
           }
-
-          ${isLoading &&
-          css`
-              cursor: wait;
-
-              &:hover,
-              &:active {
-                  background-color: ${colors.colorBackgroundBrandBoldDefault};
-              }
-          `}
+        `}
       `;
     }
     case 'subtle': {
       return css`
-          background-color: transparent;
+        background-color: transparent;
+        color: ${colors.colorTextDefault};
+
+        ${IconWrapper} {
           color: ${colors.colorTextDefault};
+        }
 
-          ${IconWrapper} {
-              color: ${colors.colorTextDefault};
-          }
+        &:hover {
+          background-color: ${colors.colorBackgroundNeutralSubtleHover};
+        }
 
-          &:hover {
-              background-color: ${colors.colorBackgroundNeutralSubtleHover};
-          }
+        &:active {
+          background-color: ${colors.colorBackgroundNeutralSubtlePress};
+        }
 
+        ${isLoading &&
+        css`
+          cursor: wait;
+
+          &:hover,
           &:active {
-              background-color: ${colors.colorBackgroundNeutralSubtlePress};
+            background-color: transparent;
           }
-
-          ${isLoading &&
-          css`
-              cursor: wait;
-
-              &:hover,
-              &:active {
-                  background-color: transparent;
-              }
-          `}
+        `}
       `;
     }
     case 'link': {
       return css`
-          background-color: transparent;
+        background-color: transparent;
+        color: ${colors.colorLinkDefault};
+
+        ${IconWrapper} {
           color: ${colors.colorLinkDefault};
+        }
 
-          ${IconWrapper} {
-              color: ${colors.colorLinkDefault};
-          }
+        &:hover {
+          text-decoration: underline;
+        }
 
-          &:hover {
-              text-decoration: underline;
-          }
+        &:active {
+          color: ${colors.colorLinkPress};
+          text-decoration: underline;
+        }
 
+        ${isLoading &&
+        css`
+          cursor: wait;
+
+          &:hover,
           &:active {
-              color: ${colors.colorLinkPress};
-              text-decoration: underline;
+            background-color: transparent;
           }
-
-          ${isLoading &&
-          css`
-              cursor: wait;
-
-              &:hover,
-              &:active {
-                  background-color: transparent;
-              }
-          `}
+        `}
       `;
     }
     case 'subtle-link': {
       return css`
-          background-color: transparent;
+        background-color: transparent;
+        color: ${colors.colorTextSubtle};
+
+        ${IconWrapper} {
           color: ${colors.colorTextSubtle};
+        }
 
-          ${IconWrapper} {
-              color: ${colors.colorTextSubtle};
-          }
+        &:hover {
+          text-decoration: underline;
+        }
 
-          &:hover {
-              text-decoration: underline;
-          }
+        &:active {
+          color: ${colors.colorTextDefault};
+          text-decoration: underline;
+        }
 
+        ${isLoading &&
+        css`
+          cursor: wait;
+
+          &:hover,
           &:active {
-              color: ${colors.colorTextDefault};
-              text-decoration: underline;
+            background-color: transparent;
           }
-
-          ${isLoading &&
-          css`
-              cursor: wait;
-
-              &:hover,
-              &:active {
-                  background-color: transparent;
-              }
-          `}
+        `}
       `;
     }
     case 'warning': {
       return css`
-          background-color: ${colors.colorBackgroundWarningBoldDefault};
-          color: ${colors.colorTextWarningInverse};
+        background-color: ${colors.colorBackgroundWarningBoldDefault};
+        color: ${colors.colorTextWarningInverse};
 
-          ${IconWrapper} {
-              color: ${colors.colorIconWarningInverse};
-          }
+        ${IconWrapper} {
+          color: ${colors.colorIconWarningInverse};
+        }
 
-          &:hover {
-              background-color: ${colors.colorBackgroundWarningBoldHover};
-          }
+        &:hover {
+          background-color: ${colors.colorBackgroundWarningBoldHover};
+        }
 
+        &:active {
+          background-color: ${colors.colorBackgroundWarningBoldPress};
+        }
+
+        ${isLoading &&
+        css`
+          cursor: wait;
+
+          &:hover,
           &:active {
-              background-color: ${colors.colorBackgroundWarningBoldPress};
+            background-color: ${colors.colorBackgroundWarningBoldDefault};
           }
-
-          ${isLoading &&
-          css`
-              cursor: wait;
-
-              &:hover,
-              &:active {
-                  background-color: ${colors.colorBackgroundWarningBoldDefault};
-              }
-          `}
+        `}
       `;
     }
     case 'danger': {
       return css`
-          background-color: ${colors.colorBackgroundDangerBoldDefault};
+        background-color: ${colors.colorBackgroundDangerBoldDefault};
+        color: ${colors.colorTextInverse};
+
+        ${IconWrapper} {
           color: ${colors.colorTextInverse};
+        }
 
-          ${IconWrapper} {
-              color: ${colors.colorTextInverse};
-          }
+        &:hover {
+          background-color: ${colors.colorBackgroundDangerBoldHover};
+        }
 
-          &:hover {
-              background-color: ${colors.colorBackgroundDangerBoldHover};
-          }
+        &:active {
+          background-color: ${colors.colorBackgroundDangerBoldPress};
+        }
 
+        ${isLoading &&
+        css`
+          cursor: wait;
+
+          &:hover,
           &:active {
-              background-color: ${colors.colorBackgroundDangerBoldPress};
+            background-color: ${colors.colorBackgroundDangerBoldDefault};
           }
-
-          ${isLoading &&
-          css`
-              cursor: wait;
-
-              &:hover,
-              &:active {
-                  background-color: ${colors.colorBackgroundDangerBoldDefault};
-              }
-          `}
+        `}
       `;
     }
   }
@@ -270,66 +270,68 @@ const getAppearanceStyles = (
 export const Root = styled.button.attrs<ButtonProps>(({ testId }) => ({
   [TESTING_DATA_ATTRIBUTE]: composeTestingPath(ButtonSelector.BUTTON, testId),
 }))<ButtonProps>`
-    appearance: none;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    gap: ${Spacing.XS};
-    width: fit-content;
+  appearance: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: ${Spacing.XS};
+  width: fit-content;
 
-    ${({ appearance, isSelected, isDisabled, isLoading, theme }) =>
-            getAppearanceStyles(appearance, isSelected, isDisabled, isLoading, theme)};
-    ${({ spacing, iconOnly }) => getSpacingStyles(spacing, iconOnly)};
+  ${({ appearance, isSelected, isDisabled, isLoading, theme }) =>
+    getAppearanceStyles(appearance, isSelected, isDisabled, isLoading, theme)};
+  ${({ spacing, iconOnly }) => getSpacingStyles(spacing, iconOnly)};
 
-    transition-property: background-color, color, border-color;
-    transition-duration: ${Duration.Quick}ms;
+  transition-property: background-color, color, border-color;
+  transition-duration: ${Duration.Quick}ms;
 
-    &:focus-visible {
-        outline: ${StrokeWidth.THICK} solid ${({ theme }) => theme.colors.colorBorderFocused};
-        outline-offset: 2px;
-    }
+  &:focus-visible {
+    outline: ${StrokeWidth.THICK} solid ${({ theme }) => theme.colors.colorBorderFocused};
+    outline-offset: 2px;
+  }
 
-    ${({ fullWidth }) => fullWidth && css`
-        width: 100%;
+  ${({ fullWidth }) =>
+    fullWidth &&
+    css`
+      width: 100%;
     `}
 
-    ${({ isSelected, theme }) =>
-            isSelected &&
-            css`
-                background-color: ${theme.colors.colorBackgroundSelectedDefault};
-                color: ${theme.colors.colorTextSelected};
+  ${({ isSelected, theme }) =>
+    isSelected &&
+    css`
+      background-color: ${theme.colors.colorBackgroundSelectedDefault};
+      color: ${theme.colors.colorTextSelected};
 
-                ${IconWrapper} {
-                    color: ${theme.colors.colorTextSelected};
-                }
+      ${IconWrapper} {
+        color: ${theme.colors.colorTextSelected};
+      }
 
-                &:hover,
-                &:active {
-                    background-color: ${theme.colors.colorBackgroundSelectedDefault};
-                    text-decoration: none;
-                    color: ${theme.colors.colorTextSelected};
-                }
-            `}
+      &:hover,
+      &:active {
+        background-color: ${theme.colors.colorBackgroundSelectedDefault};
+        text-decoration: none;
+        color: ${theme.colors.colorTextSelected};
+      }
+    `}
 
     ${({ isDisabled, theme }) =>
-            isDisabled &&
-            css`
-                background-color: ${theme.colors.colorBackgroundDisabled};
-                color: ${theme.colors.colorTextDisabled};
-                cursor: not-allowed;
+    isDisabled &&
+    css`
+      background-color: ${theme.colors.colorBackgroundDisabled};
+      color: ${theme.colors.colorTextDisabled};
+      cursor: not-allowed;
 
-                ${IconWrapper} {
-                    color: ${theme.colors.colorTextDisabled};
-                }
+      ${IconWrapper} {
+        color: ${theme.colors.colorTextDisabled};
+      }
 
-                &:hover,
-                &:active {
-                    background-color: ${theme.colors.colorBackgroundDisabled};
-                    text-decoration: none;
-                    color: ${theme.colors.colorTextDisabled};
-                }
-            `}
+      &:hover,
+      &:active {
+        background-color: ${theme.colors.colorBackgroundDisabled};
+        text-decoration: none;
+        color: ${theme.colors.colorTextDisabled};
+      }
+    `}
 `;

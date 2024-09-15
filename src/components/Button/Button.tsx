@@ -10,28 +10,25 @@ import { ButtonIconSpacingMap, ButtonSelector } from './constants.ts';
 import type { BaseButtonProps } from './types.ts';
 
 export const Button: FC<BaseButtonProps> = ({
-                                              children,
-                                              icon,
-                                              spacing = 'default',
-                                              appearance = 'default',
-                                              fullWidth = false,
-                                              isDisabled = false,
-                                              iconOnly = false,
-                                              isSelected = false,
-                                              isLoading = false,
-                                              testId,
-                                              ...props
-                                            }) => {
-
+  children,
+  icon,
+  spacing = 'default',
+  appearance = 'default',
+  fullWidth = false,
+  isDisabled = false,
+  iconOnly = false,
+  isSelected = false,
+  isLoading = false,
+  testId,
+  ...props
+}) => {
   const renderContent = () => {
     if (isLoading) {
       return <Spinner testId={ButtonSelector.BUTTON_SPINNER} size={ButtonIconSpacingMap[spacing]} />;
     }
 
     if (icon) {
-      return isString(icon)
-        ? <Icon testId={ButtonSelector.BUTTON_ICON} type={icon as IconVariant} size={24} />
-        : icon;
+      return isString(icon) ? <Icon testId={ButtonSelector.BUTTON_ICON} type={icon as IconVariant} size={24} /> : icon;
     }
 
     return children;

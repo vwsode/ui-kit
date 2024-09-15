@@ -1,7 +1,7 @@
 import { PropsWithClassName, TestableComponent } from '../types/controls';
 
 export type IconVariant =
-  'checkrmark-circle'
+  | 'checkrmark-circle'
   | 'error-circle'
   | 'warning'
   | 'spinner'

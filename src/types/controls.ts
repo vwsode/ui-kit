@@ -3,8 +3,7 @@ export type PropsWithClassName = {
    * ClassName
    */
   className?: string;
-}
-
+};
 
 export type TestableComponent = {
   /**

@@ -8,7 +8,6 @@ import { Text } from '../Text';
 
 import { MOCK_TEXT, MOCK_TEXT_TYPES } from './mocks';
 
-
 describe('Text component:', () => {
   it('should render component with text', () => {
     render(

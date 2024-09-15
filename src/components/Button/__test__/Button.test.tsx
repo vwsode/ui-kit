@@ -26,7 +26,9 @@ describe('Button component: ', () => {
       </ThemeProvider>,
     );
 
-    expect(screen.getByTestId(composeTestingPath(SpinnerSelector.SPINNER, ButtonSelector.BUTTON_SPINNER))).toBeInTheDocument();
+    expect(
+      screen.getByTestId(composeTestingPath(SpinnerSelector.SPINNER, ButtonSelector.BUTTON_SPINNER)),
+    ).toBeInTheDocument();
   });
 
   it('should renders icon when icon is a string', () => {

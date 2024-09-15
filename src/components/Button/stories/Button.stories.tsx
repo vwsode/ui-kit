@@ -91,12 +91,14 @@ export const WithIcon: Story = {
     return (
       <div style={{ display: 'flex', gap: 8, alignItems: 'center', justifyContent: 'center' }}>
         <Button {...args} icon="editor-close" iconOnly={true}></Button>
-        <Button {...args} appearance="primary" icon="editor-close">Hello</Button>
+        <Button {...args} appearance="primary" icon="editor-close">
+          Hello
+        </Button>
         <Button {...args} appearance="warning">
           <Icon type="editor-done" size={24} />
           Hello
         </Button>
-        <Button  {...args} appearance="danger" iconOnly={true}>
+        <Button {...args} appearance="danger" iconOnly={true}>
           <Icon type="more" size={24} />
         </Button>
       </div>

@@ -8,7 +8,7 @@ export default {
     '\\.(css|less|sass|scss|woff|woff2)$': 'identity-obj-proxy',
     '^.+\\.svg$': 'jest-transformer-svg',
 
-    "^@/(.*)$": "<rootDir>/src/$1",
+    '^@/(.*)$': '<rootDir>/src/$1',
     '^@components(.*)$': '<rootDir>/src/components$1',
     '^@constants(.*)$': '<rootDir>/src/constants$1',
     '^@contexts(.*)$': '<rootDir>/src/contexts$1',
