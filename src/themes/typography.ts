@@ -212,3 +212,10 @@ export const textTab = css`
   line-height: ${LineHeight.M};
   font-weight: ${FontWeight.Bold};
 `;
+
+export const textButton = css`
+  ${defaultText}
+  font-size: ${FontSize.XS};
+  line-height: ${LineHeight.XS};
+  font-weight: ${FontWeight.Medium};
+`;
