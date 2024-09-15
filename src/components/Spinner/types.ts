@@ -15,4 +15,9 @@ export type SpinnerProps = {
    *
    */
   size?: SpinnerSize;
+
+  /*
+   *
+   */
+  color?: string;
 } & TestableComponent;

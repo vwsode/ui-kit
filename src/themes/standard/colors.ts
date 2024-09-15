@@ -154,6 +154,17 @@ export const Colors = {
    * Text colors.
    */
   colorTextDefault: '#172B4D',
+  colorTextInverse: '#FFFFFF',
+  colorTextWarningInverse: '#172B4D',
+  colorTextSelected: '#0C66E4',
+  colorTextDisabled: hexToRGB('#091E42', 0.31),
+  colorTextSubtle: '#44546F',
+
+  /**
+   * Link colors.
+   */
+  colorLinkDefault: '#0C66E4',
+  colorLinkPress: '#0055CC',
 
   /**
    * Border colors.
@@ -168,23 +179,43 @@ export const Colors = {
    */
   colorIconDisabled: hexToRGB('#091E42', 0.31),
   colorIconInverse: '#FFFFFF',
+  colorIconWarningInverse: '#172B4D',
 
   /**
    * Background colors.
    */
-  colorBackgroundNeutralDefault: '',
-  colorBackgroundNeutralHover: '',
-  colorBackgroundNeutralPress: '',
+  colorBackgroundWarningBoldDefault: '#F5CD47',
+  colorBackgroundWarningBoldHover: '#E2B203',
+  colorBackgroundWarningBoldPress: '#CF9F02',
+
+  colorBackgroundNeutralDefault: hexToRGB('#091E42', 0.06),
+  colorBackgroundNeutralHover: hexToRGB('#091E42', 0.14),
+  colorBackgroundNeutralPress: hexToRGB('#091E42', 0.31),
 
   colorBackgroundNeutralBoldDefault: '#44546F',
   colorBackgroundNeutralBoldHover: '#2C3E5D',
   colorBackgroundNeutralBoldPress: '#172B4D',
 
+  colorBackgroundNeutralSubtleHover: hexToRGB('#091E42', 0.06),
+  colorBackgroundNeutralSubtlePress: hexToRGB('#091E42', 0.14),
+
   colorBackgroundDisabled: hexToRGB('#091E42', 0.03),
+
+  colorBackgroundSelectedDefault: '#E9F2FF',
   colorBackgroundSelectedBold: '#0C66E4',
+
   colorBackgroundInputDefault: '#FFFFFF',
   colorBackgroundInputHover: '#F7F8F9',
   colorBackgroundInputPress: '#FFFFFF',
+
   colorBackgroundSuccessBoldDefault: '#1F845A',
   colorBackgroundSuccessBoldHover: '#216E4E',
+
+  colorBackgroundBrandBoldDefault: '#0C66E4',
+  colorBackgroundBrandBoldHover: '#0055CC',
+  colorBackgroundBrandBoldPress: '#09326C',
+
+  colorBackgroundDangerBoldDefault: '#C9372C',
+  colorBackgroundDangerBoldHover: '#AE2E24',
+  colorBackgroundDangerBoldPress: '#5D1F1A',
 };
