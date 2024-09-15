@@ -11,3 +11,11 @@ export type TestableComponent = {
    */
   testId?: string;
 };
+
+export type PropWithAriaLabel = {
+  /**
+   * Refers to an aria-label attribute. Sets an accessible name for the button group wrapper to announce it to users of assistive technology.
+   * Usage of either this, or the titleId attribute is strongly recommended.
+   */
+  label?: string;
+};
