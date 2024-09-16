@@ -7,4 +7,4 @@ export const StoryPage: FC<StoryPageProps> = ({ children }) => {
   return <StyledStoryPage>{children}</StyledStoryPage>;
 };
 
-StoryPage.displayName = 'StoryPpage';
+StoryPage.displayName = 'StoryPage';
