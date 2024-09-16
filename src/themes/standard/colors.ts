@@ -159,6 +159,7 @@ export const Colors = {
   colorTextSelected: '#0C66E4',
   colorTextDisabled: hexToRGB('#091E42', 0.31),
   colorTextSubtle: '#44546F',
+  colorTextDanger: '#AE2E24',
 
   /**
    * Link colors.
@@ -202,7 +203,10 @@ export const Colors = {
   colorBackgroundDisabled: hexToRGB('#091E42', 0.03),
 
   colorBackgroundSelectedDefault: '#E9F2FF',
+  // The same color
   colorBackgroundSelectedBold: '#0C66E4',
+  colorBackgroundSelectedBoldDefault: '#0C66E4',
+  colorBackgroundSelectedBoldHover: '#0055CC',
 
   colorBackgroundInputDefault: '#FFFFFF',
   colorBackgroundInputHover: '#F7F8F9',

@@ -1,18 +1,12 @@
 import React from 'react';
 
+import { Checkbox } from './components/Checkbox';
+
+import { Checkbox } from './components/Checkbox';
 import { GlobalStyles } from './components/GlobalStyles';
-import { Toggle } from './components/Toggle';
 import { ThemeProvider } from './contexts/ThemeContext/ThemeContext';
-import { Button } from './components/Button';
-import { Icon } from './icons';
 
 function App() {
-  const [value, setValue] = React.useState<boolean>(false);
-
-  const handleChange = () => {
-    setValue((prev) => !prev);
-  };
-
   return (
     <ThemeProvider themeName="standard">
       <GlobalStyles>
@@ -27,29 +21,8 @@ function App() {
             alignItems: 'center',
           }}
         >
-          <Toggle testId="Form" isChecked={value} onChange={handleChange} />
-          <Toggle testId="Form" isDisabled />
-          <Toggle testId="Form" isDisabled size="large" />
-          <Toggle testId="Form" isChecked={value} onChange={handleChange} size="large" />
-
-          <Button onClick={() => console.log('click')}>Button</Button>
-          <Button spacing="compact">
-            <Icon type="editor-close" size={24} />
-            Button
-          </Button>
-          <Button isSelected={true}>Button</Button>
-          <Button isDisabled={true}>Button</Button>
-
-          <Button spacing="compact">Button</Button>
-          <Button spacing="compact" isLoading={true}>
-            Button
-          </Button>
-          <Button spacing="compact" isSelected={true}>
-            Button
-          </Button>
-          <Button spacing="compact" isDisabled={true}>
-            Button
-          </Button>
+          {/* <Checkbox label="Controlled" onChange={handleChange} isChecked={value} value="email" name="email" /> */}
+          <Checkbox label="Uncontrolled" />
         </div>
       </GlobalStyles>
     </ThemeProvider>
