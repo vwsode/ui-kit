@@ -7,7 +7,9 @@ export type IconVariant =
   | 'spinner'
   | 'editor-close'
   | 'editor-done'
-  | 'more';
+  | 'more'
+  | 'chevron-left'
+  | 'chevron-right';
 
 export type IconSize = 8 | 16 | 20 | 24 | 48 | 96;
 
