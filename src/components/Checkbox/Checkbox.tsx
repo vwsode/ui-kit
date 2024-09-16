@@ -6,22 +6,25 @@ import { Text, Input, Label, InputBox, RequiredSymbol } from './Checkbox.styles'
 
 import type { CheckboxProps } from './types';
 
+/**
+ *
+ */
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, ref) => {
   const {
     label,
     testId,
     onChange,
     onBlur,
-    name,
-    value,
-    defaultChecked,
+    name = '',
+    value = '',
+    defaultChecked = false,
     isDisabled = false,
-    isChecked: initialChecked = false,
+    isChecked: controlledChecked,
     isRequired = false,
     isIndeterminate = false,
     isInvalid = false,
   } = props;
-  const [isChecked, setIsChecked] = useState(initialChecked || defaultChecked);
+  const [isChecked, setIsChecked] = useState(controlledChecked !== undefined ? controlledChecked : defaultChecked);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const newChecked = event.target.checked;
@@ -37,11 +40,13 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, ref)
   };
 
   useEffect(() => {
-    setIsChecked(initialChecked || defaultChecked);
-  }, [initialChecked, defaultChecked]);
+    if (controlledChecked !== undefined) {
+      setIsChecked(controlledChecked);
+    }
+  }, [controlledChecked]);
 
   return (
-    <Label testId={testId} aria-checked={isChecked} aria-required={isRequired}>
+    <Label testId={testId} aria-checked={isChecked} aria-required={isRequired} aria-disabled={isDisabled}>
       <InputBox testId={testId}>
         <Input
           type="checkbox"
@@ -61,7 +66,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, ref)
       {label && (
         <Text isDisabled={isDisabled}>
           {label}
-          <RequiredSymbol>{isRequired && label && REQUIRED_SYMBOL}</RequiredSymbol>
+          <RequiredSymbol>{isRequired && REQUIRED_SYMBOL}</RequiredSymbol>
         </Text>
       )}
     </Label>
