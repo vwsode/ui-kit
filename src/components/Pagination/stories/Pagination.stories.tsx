@@ -8,8 +8,11 @@ const meta: Meta<typeof Pagination> = {
   component: Pagination,
   argTypes: {},
   args: {
-    pages: Array.from({ length: 20 }, (v, i) => i + 1),
+    pages: Array.from({ length: 10 }, (v, i) => i + 1),
     currentPage: 3,
+  },
+  parameters: {
+    layout: 'centered',
   },
   tags: ['autodocs'],
   render: (args) => <Pagination {...args} />,
