@@ -15,6 +15,7 @@ export const Pagination: FC<PaginationProps> = ({
   onChange,
   testId,
   defaultSelectedPage,
+  label,
   isDisabled = false,
   max = 1,
   currentPage = 1,
@@ -50,7 +51,7 @@ export const Pagination: FC<PaginationProps> = ({
   };
 
   return (
-    <Root isDisabled={isDisabled} testId={testId}>
+    <Root isDisabled={isDisabled} testId={testId} aria-label={label}>
       <Navigator
         isDisabled={isDisabled || selectedPage === 1}
         onClick={handleNavigatorClick}

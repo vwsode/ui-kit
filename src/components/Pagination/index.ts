@@ -14,5 +14,3 @@ export { usePagination } from './hooks/usePagination';
 
 // Other
 export { PaginationSelector } from './components/Pagination';
-export { NavigatorSelector } from './components/Navigator';
-export { PageSelector } from './components/Page';

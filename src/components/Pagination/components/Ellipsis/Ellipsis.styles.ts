@@ -6,10 +6,10 @@ import { textBody } from '@/themes/typography';
 import { TestableComponent } from '@/types/controls';
 import { composeTestingPath } from '@/utils';
 
-import { EllipsisSelector } from './constants';
+import { PaginationSelector } from '../Pagination';
 
 export const Root = styled.div.attrs<TestableComponent>(({ testId }) => ({
-  [TESTING_DATA_ATTRIBUTE]: composeTestingPath(EllipsisSelector.ELLIPSIS, testId),
+  [TESTING_DATA_ATTRIBUTE]: composeTestingPath(PaginationSelector.ELLIPSIS, testId),
 }))<TestableComponent>`
   display: inline-flex;
   flex-direction: row;

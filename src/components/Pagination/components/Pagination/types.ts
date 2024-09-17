@@ -1,6 +1,6 @@
 import { MouseEvent } from 'react';
 
-import { TestableComponent } from '@/types/controls';
+import { PropWithAriaLabel, TestableComponent } from '@/types/controls';
 
 export type PaginationProps = {
   /**
@@ -46,7 +46,8 @@ export type PaginationProps = {
    * This is optional and can be used to control how many pages are visible around the current page.
    */
   siblingCount?: number;
-} & TestableComponent;
+} & TestableComponent &
+  PropWithAriaLabel;
 
 export type StyledPaginationProps = {
   isDisabled: boolean;

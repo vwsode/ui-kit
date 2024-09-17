@@ -3,7 +3,8 @@ import { FC, MouseEvent } from 'react';
 import { Icon } from '@/icons';
 import { composeTestingPath } from '@/utils';
 
-import { NavigatorSelector } from './constants';
+import { PaginationSelector } from '../Pagination';
+
 import { NavigatorButton } from './Navigator.styles';
 
 import type { NavigatorProps } from './types';
@@ -17,7 +18,7 @@ export const Navigator: FC<NavigatorProps> = ({ direction, testId, onClick, isDi
     <NavigatorButton
       onClick={handleClick}
       appearance="subtle"
-      testId={composeTestingPath(NavigatorSelector.NAVIGATOR, testId)}
+      testId={composeTestingPath(PaginationSelector.NAVIGATOR, testId)}
       iconOnly
       isDisabled={isDisabled}
     >

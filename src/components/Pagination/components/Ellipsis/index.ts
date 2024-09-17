@@ -5,4 +5,4 @@ export { Ellipsis } from './Ellipsis';
 export type { EllipsisProps } from './types';
 
 // Other
-export { EllipsisSelector, ELLIPSIS_SYMBOL } from './constants';
+export { ELLIPSIS_SYMBOL } from './constants';

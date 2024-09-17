@@ -2,7 +2,8 @@ import { FC, MouseEvent } from 'react';
 
 import { composeTestingPath } from '@/utils';
 
-import { PageSelector } from './constants';
+import { PaginationSelector } from '../Pagination';
+
 import { PageButton } from './Page.styles';
 
 import type { PageProps } from './types';
@@ -14,7 +15,7 @@ export const Page: FC<PageProps> = ({ page, onClick, testId, isSelected = false,
   return (
     <PageButton
       isDisabled={isDisabled}
-      testId={composeTestingPath(PageSelector.PAGE, testId)}
+      testId={composeTestingPath(PaginationSelector.PAGE, testId)}
       onClick={handleClick}
       appearance="subtle"
       isSelected={isSelected}

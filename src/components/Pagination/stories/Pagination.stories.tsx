@@ -9,11 +9,11 @@ const meta: Meta<typeof Pagination> = {
   argTypes: {},
   args: {
     pages: Array.from({ length: 10 }, (v, i) => i + 1),
-    currentPage: 3,
+    currentPage: 1,
     max: 1,
     siblingCount: 1,
     isDisabled: false,
-    defaultSelectedPage: 3,
+    defaultSelectedPage: 1,
   },
   parameters: {
     layout: 'centered',
