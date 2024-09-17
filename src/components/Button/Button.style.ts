@@ -290,6 +290,7 @@ export const Root = styled.button.attrs<ButtonProps>(({ testId }) => ({
   &:focus-visible {
     outline: ${StrokeWidth.THICK} solid ${({ theme }) => theme.colors.colorBorderFocused};
     outline-offset: 2px;
+    position: relative;
   }
 
   ${({ fullWidth }) =>
