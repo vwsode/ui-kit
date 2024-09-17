@@ -1,26 +1,26 @@
 import { FC, MouseEvent } from 'react';
 
-import { Button } from '@/components/Button';
 import { composeTestingPath } from '@/utils';
 
 import { PageSelector } from './constants';
+import { PageButton } from './Page.styles';
 
 import type { PageProps } from './types';
 
-export const Page: FC<PageProps> = ({ page, onClick, testId, isSelected = false }) => {
+export const Page: FC<PageProps> = ({ page, onClick, testId, isSelected = false, isDisabled = false }) => {
   const handleClick = (event: MouseEvent) => {
-    onClick?.(event, page);
+    onClick?.(event, Number(page));
   };
-
   return (
-    <Button
+    <PageButton
+      isDisabled={isDisabled}
       testId={composeTestingPath(PageSelector.PAGE, testId)}
       onClick={handleClick}
       appearance="subtle"
       isSelected={isSelected}
     >
       {page}
-    </Button>
+    </PageButton>
   );
 };
 

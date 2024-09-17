@@ -1,33 +1,47 @@
 import { FC, MouseEvent, useState } from 'react';
 
+import { isEllipsis } from '../../helpers';
+import { usePagination } from '../../hooks/usePagination';
 import { Ellipsis } from '../Ellipsis';
 import { Navigator, NavigatorDirection } from '../Navigator';
 import { Page } from '../Page';
 
 import { Root } from './Pagination.styles';
-import { PaginationProps } from './types';
+
+import type { PaginationProps } from './types';
 
 export const Pagination: FC<PaginationProps> = ({
-                                                  pages,
-                                                  currentPage,
-                                                  max,
-                                                  onChange,
-                                                  defaultSelectedPage,
-                                                  isDisabled = false,
-                                                  testId,
-                                                }) => {
-  const [selectedPage, setSelectedPage] = useState<number>(currentPage !== undefined ? currentPage : defaultSelectedPage);
+  pages,
+  onChange,
+  testId,
+  defaultSelectedPage,
+  isDisabled = false,
+  max = 1,
+  currentPage = 1,
+  siblingCount = 1,
+}) => {
+  const [selectedPage, setSelectedPage] = useState<number>(
+    defaultSelectedPage !== undefined ? defaultSelectedPage : currentPage,
+  );
 
+  const { paginationRange } = usePagination({
+    currentPage: selectedPage,
+    siblingCount,
+    totalCount: pages.length,
+    pageSize: max,
+  });
 
-  const handlePageChange = (event: MouseEvent, page: number) => {
-    if (page > pages.length || page <= 0) {
+  const lastPage = paginationRange[paginationRange.length - 1];
+
+  const handlePageChange = (event: MouseEvent, page: number | string) => {
+    setSelectedPage(Number(page));
+
+    if (Number(page) > pages.length || Number(page) <= 0) {
       return;
     }
 
-    setSelectedPage(page);
-
     if (onChange) {
-      onChange(event, page);
+      onChange(event, Number(page));
     }
   };
 
@@ -35,61 +49,31 @@ export const Pagination: FC<PaginationProps> = ({
     handlePageChange(event, direction === 'next' ? selectedPage + 1 : selectedPage - 1);
   };
 
-  const renderPages = (start: number, end: number) =>
-    pages.slice(start, end).map((item, index) => (
-      <Page
-        onClick={handlePageChange}
-        key={index}
-        page={item}
-        isSelected={selectedPage === item}
-        testId={testId}
-      />
-    ));
-
-  const renderPagination = () => {
-    if (selectedPage < 5) {
-      return (
-        <>
-          {renderPages(0, 5)}
-          <Ellipsis testId={testId} />
-          <Page testId={testId} page={pages[pages.length - 1]} onClick={handlePageChange} />
-        </>
-      );
-    }
-
-    if (selectedPage >= 5 && selectedPage < pages.length - 3) {
-      return (
-        <>
-          <Page testId={testId} page={pages[0]} onClick={handlePageChange} />
-          <Ellipsis testId={testId} />
-          {renderPages(selectedPage - 2, selectedPage + 1)}
-          <Ellipsis testId={testId} />
-          <Page testId={testId} page={pages[pages.length - 1]} onClick={handlePageChange} />
-        </>
-      );
-    }
-
-    return (
-      <>
-        <Page testId={testId} page={pages[0]} onClick={handlePageChange} />
-        <Ellipsis testId={testId} />
-        {renderPages(pages.length - 4, pages.length)}
-      </>
-    );
-  };
-
-
   return (
     <Root isDisabled={isDisabled} testId={testId}>
       <Navigator
-        isDisabled={selectedPage <= 1}
+        isDisabled={isDisabled || selectedPage === 1}
         onClick={handleNavigatorClick}
         direction="prev"
         testId={testId}
       />
-      {renderPagination()}
+      {paginationRange.map((page, index) => {
+        if (isEllipsis(page)) {
+          return <Ellipsis key={index} testId={testId} />;
+        }
+
+        return (
+          <Page
+            isDisabled={isDisabled}
+            onClick={handlePageChange}
+            key={index}
+            page={page}
+            isSelected={page === selectedPage}
+          />
+        );
+      })}
       <Navigator
-        isDisabled={selectedPage >= pages.length}
+        isDisabled={isDisabled || selectedPage === lastPage}
         onClick={handleNavigatorClick}
         direction="next"
         testId={testId}
