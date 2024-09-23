@@ -1,9 +1,13 @@
+import { CheckCircle } from './CheckCircle';
 import { CheckmarkCircle } from './CheckmarkCircle';
+import { ChevronDown } from './ChevronDown';
 import { ChevronLeft } from './ChevronLeft';
 import { ChevronRight } from './ChevronRight';
 import { EditorClose } from './EditorClose';
 import { EditorDone } from './EditorDone';
+import { Error } from './Error';
 import { ErrorCircle } from './ErrorCircle';
+import { Info } from './Info';
 import { More } from './More';
 import { Spinner } from './Spinner/Spinner';
 import { IconBaseProps, IconVariant } from './types';
@@ -19,4 +23,8 @@ export const iconComponentsMap: Record<IconVariant, React.FC<IconBaseProps>> = {
   warning: Warning,
   spinner: Spinner,
   more: More,
+  'check-circle': CheckCircle,
+  info: Info,
+  error: Error,
+  'chevron-down': ChevronDown,
 };

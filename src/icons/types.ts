@@ -9,9 +9,14 @@ export type IconVariant =
   | 'editor-done'
   | 'more'
   | 'chevron-left'
-  | 'chevron-right';
+  | 'chevron-right'
+  | 'info'
+  | 'check-circle'
+  | 'error'
+  | 'chevron-down';
 
-export type IconSize = 8 | 16 | 20 | 24 | 48 | 96;
+//*  Todo: Need to fix it: change sizes to 16 | 24 | 32 | 48
+export type IconSize = 8 | 16 | 20 | 24 | 32 | 48 | 96;
 
 export type IconBaseProps = {
   /**

@@ -222,4 +222,11 @@ export const Colors = {
   colorBackgroundDangerBoldDefault: '#C9372C',
   colorBackgroundDangerBoldHover: '#AE2E24',
   colorBackgroundDangerBoldPress: '#5D1F1A',
+
+  colorBackgroundInverseSubtleDefault: hexToRGB('#000000', 0.16),
+  colorBackgroundInverseSubtleHover: hexToRGB('#000000', 0.24),
+  colorBackgroundInverseSubtlePress: hexToRGB('#000000', 0.32),
+
+  // Elevation
+  colorElevationSurfaceOverlayDefault: '#FFFFFF',
 };
