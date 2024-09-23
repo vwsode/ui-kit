@@ -9,7 +9,11 @@ export type IconVariant =
   | 'editor-done'
   | 'more'
   | 'chevron-left'
-  | 'chevron-right';
+  | 'chevron-right'
+  | 'info'
+  | 'check-circle'
+  | 'error'
+  | 'question-circle';
 
 export type IconSize = 8 | 16 | 20 | 24 | 48 | 96;
 
