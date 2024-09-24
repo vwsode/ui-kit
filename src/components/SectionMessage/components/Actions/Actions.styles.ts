@@ -16,7 +16,9 @@ export const Root = styled.div.attrs<TestableComponent>(({ testId }) => ({
   align-items: center;
 `;
 
-export const Dot = styled.span`
+export const Dot = styled.span.attrs<TestableComponent>(({ testId }) => ({
+  [TESTING_DATA_ATTRIBUTE]: composeTestingPath(SectionMessageSelector.ACTIONS_DOT, testId),
+}))<TestableComponent>`
   color: ${({ theme }) => theme.colors.text.subtle};
   font-size: ${FontSize.XS};
   line-height: ${LineHeight.XS};

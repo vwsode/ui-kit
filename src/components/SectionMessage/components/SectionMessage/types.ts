@@ -8,19 +8,19 @@ export type SectionMessageAppearance = 'information' | 'success' | 'warning' | '
 
 export type SectionMessageProps = {
   /**
-   *
+   * Defines the visual style of the section message.
    */
   appearance?: SectionMessageAppearance;
 
   /**
-   *
+   * The title of the section message, displayed prominently.
    */
   title: string;
 
   /**
-   *
+   * An icon to visually represent the message.
    */
-  icon: IconVariant | ReactNode;
+  icon?: IconVariant | ReactNode;
 } & PropsWithChildren &
   TestableComponent;
 

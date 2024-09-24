@@ -11,6 +11,7 @@ const meta: Meta<typeof SectionMessage> = {
   argTypes: {},
   args: {
     title: 'Title',
+    appearance: 'information',
   },
   parameters: {
     layout: 'centered',

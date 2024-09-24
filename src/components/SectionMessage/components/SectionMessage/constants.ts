@@ -5,8 +5,10 @@ import { SectionMessageAppearance } from './types';
 export enum SectionMessageSelector {
   ROOT = 'SectionMessage',
   ACTIONS = 'SectionMessageActions',
+  ACTIONS_DOT = 'SectionMessageActionsDot',
   TITLE = 'SectionMessageTitle',
   CONTENT = 'SectionMessageContent',
+  ICON = 'SectionMessageIcon',
 }
 
 export const SectionMessageIconMap: Record<SectionMessageAppearance, IconVariant> = {
