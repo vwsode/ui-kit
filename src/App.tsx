@@ -1,76 +1,79 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import { Checkbox } from '@/components/Checkbox';
-
-import { Flag } from './components/Flag/components/Flag';
-import { FlagAction } from './components/Flag/components/FlagAction';
-import { FlagActions } from './components/Flag/components/FlagActions';
-import { FlagContent } from './components/Flag/components/FlagContent';
+import { Button } from './components/Button';
+import { Flag, FlagGroup } from './components/Flag';
 import { GlobalStyles } from './components/GlobalStyles';
 import { ThemeProvider } from './contexts/ThemeContext/ThemeContext';
-import { Button } from './components/Button';
 
-function App() {
+type FlagType = {
+  id: string;
+  type: 'error' | 'info' | 'success' | 'warning' | 'normal';
+  title: string;
+  description: string;
+};
+
+const defaultDescription =
+  'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus, quam reiciendis praesentium perspiciatis incidunt corrupti dignissimos modi iure aliquam ratione?';
+
+const initialFlags: FlagType[] = [
+  {
+    id: '1',
+    type: 'info',
+    title: 'Flag: 1',
+    description: defaultDescription,
+  },
+  {
+    id: '2',
+    type: 'error',
+    title: 'Flag: 2',
+    description: defaultDescription,
+  },
+  {
+    id: '3',
+    type: 'normal',
+    title: 'Flag: 3',
+    description: defaultDescription,
+  },
+];
+
+const generateFlagData = (index: number): FlagType => {
+  return {
+    description: defaultDescription,
+    id: `${index + 1}`,
+    title: `Flag: ${index + 1}`,
+    type: 'normal',
+  };
+};
+
+export default function App() {
+  const [flags, setFlags] = useState<FlagType[]>(initialFlags);
+
+  const addFlag = () => {
+    setFlags((prev) => [generateFlagData(flags.length), ...prev]);
+  };
+
+  const removeFlag = () => {
+    // setFlags()
+  };
+
   return (
     <ThemeProvider themeName="standard">
       <GlobalStyles>
-        <div
-          style={{
-            margin: '0 auto',
-            maxWidth: '1920px',
-            width: '956px',
-            flexDirection: 'column',
-            display: 'flex',
-            gap: '8px',
-            alignItems: 'center',
-          }}
-        >
-          {/* <Checkbox label="Controlled" onChange={handleChange} isChecked={value} value="email" name="email" /> */}
-          <Checkbox label="Uncontrolled" />
-          <Flag title="Welcome to the room">
-            <FlagContent>Check your internet connection and try again</FlagContent>
-            <FlagActions>
-              <FlagAction>No thanks</FlagAction>
-              <FlagAction component="button">Yes please</FlagAction>
-            </FlagActions>
-          </Flag>
-          <Flag appearance="error" title="Welcome to the room">
-            <FlagContent>Check your internet connection and try again</FlagContent>
-            <FlagActions>
-              <FlagAction>No thanks</FlagAction>
-              <FlagAction component="button">Yes please</FlagAction>
-            </FlagActions>
-          </Flag>
-          <Flag appearance="info" title="Welcome to the room">
-            <FlagContent>Check your internet connection and try again</FlagContent>
-            <FlagActions>
-              <FlagAction>No thanks</FlagAction>
-              <FlagAction component="button">Yes please</FlagAction>
-            </FlagActions>
-          </Flag>
-          <Flag fullWidth appearance="warning" title="Welcome to the room">
-            <FlagContent>Check your internet connection and try again</FlagContent>
-            <FlagActions>
-              <FlagAction>No thanks</FlagAction>
-              <FlagAction component="button">Yes please</FlagAction>
-            </FlagActions>
-          </Flag>
-
-          <Flag appearance="normal" title="Welcome to the room">
-            <FlagContent>Check your internet connection and try again</FlagContent>
-            <FlagActions>
-              <Button appearance="link" spacing="compact">
-                Understood
-              </Button>
-              <Button appearance="link" spacing="compact">
-                No thanks
-              </Button>
-            </FlagActions>
-          </Flag>
-        </div>
+        <Button onClick={addFlag} appearance="primary">
+          Create new Flag
+        </Button>
+        <FlagGroup>
+          {flags.map((flag) => (
+            <Flag key={flag.id} title={flag.title} id={flag.id} appearance={flag.type}>
+              <Flag.Content>{flag.description}</Flag.Content>
+              <Flag.Actions>
+                <Flag.Action>Create one</Flag.Action>
+                <Flag.Action>Delete</Flag.Action>
+              </Flag.Actions>
+            </Flag>
+          ))}
+        </FlagGroup>
       </GlobalStyles>
     </ThemeProvider>
   );
 }
-
-export default App;

@@ -6,6 +6,7 @@ export enum FlagSelector {
   FLAG = 'Flag',
   ACTION = 'FlagAction',
   ACTIONS = 'FlagActions',
+  ACTIONS_DOT = 'FlagActionsDot',
   CONTENT = 'FlagContent',
 }
 

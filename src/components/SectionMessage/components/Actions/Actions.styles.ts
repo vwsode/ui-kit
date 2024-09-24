@@ -1,25 +1,25 @@
 import styled from 'styled-components';
 
 import { TESTING_DATA_ATTRIBUTE } from '@/constants/TestUtils';
-import { Font, FontSize, LineHeight, Spacing } from '@/themes';
+import { Font, FontSize, LineHeight } from '@/themes';
 import { TestableComponent } from '@/types/controls';
 import { composeTestingPath } from '@/utils';
 
-import { FlagSelector } from '../Flag/constants';
+import { SectionMessageSelector } from '../SectionMessage/constants';
 
 const DOT_WIDTH = 16;
 
-export const Actions = styled.div.attrs<TestableComponent>(({ testId }) => ({
-  [TESTING_DATA_ATTRIBUTE]: composeTestingPath(FlagSelector.ACTIONS, testId),
+export const Root = styled.div.attrs<TestableComponent>(({ testId }) => ({
+  [TESTING_DATA_ATTRIBUTE]: composeTestingPath(SectionMessageSelector.ACTIONS, testId),
 }))<TestableComponent>`
   display: flex;
   align-items: center;
-  gap: ${Spacing.S};
 `;
 
 export const Dot = styled.span.attrs<TestableComponent>(({ testId }) => ({
-  [TESTING_DATA_ATTRIBUTE]: composeTestingPath(FlagSelector.ACTIONS_DOT, testId),
+  [TESTING_DATA_ATTRIBUTE]: composeTestingPath(SectionMessageSelector.ACTIONS_DOT, testId),
 }))<TestableComponent>`
+  color: ${({ theme }) => theme.colors.text.subtle};
   font-size: ${FontSize.XS};
   line-height: ${LineHeight.XS};
   font-family: ${Font.Base};
@@ -29,5 +29,4 @@ export const Dot = styled.span.attrs<TestableComponent>(({ testId }) => ({
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: inherit;
 `;

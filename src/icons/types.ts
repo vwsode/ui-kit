@@ -13,9 +13,9 @@ export type IconVariant =
   | 'info'
   | 'check-circle'
   | 'error'
+  | 'question-circle'
   | 'chevron-down';
 
-//*  Todo: Need to fix it: change sizes to 16 | 24 | 32 | 48
 export type IconSize = 8 | 16 | 20 | 24 | 32 | 48 | 96;
 
 export type IconBaseProps = {

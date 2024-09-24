@@ -7,8 +7,9 @@ import { EditorClose } from './EditorClose';
 import { EditorDone } from './EditorDone';
 import { Error } from './Error';
 import { ErrorCircle } from './ErrorCircle';
-import { Info } from './Info';
+import { Information } from './Information';
 import { More } from './More';
+import { QuestionCircle } from './QuestionCircle';
 import { Spinner } from './Spinner/Spinner';
 import { IconBaseProps, IconVariant } from './types';
 import { Warning } from './Warning';
@@ -23,8 +24,9 @@ export const iconComponentsMap: Record<IconVariant, React.FC<IconBaseProps>> = {
   warning: Warning,
   spinner: Spinner,
   more: More,
+  info: Information,
   'check-circle': CheckCircle,
-  info: Info,
   error: Error,
+  'question-circle': QuestionCircle,
   'chevron-down': ChevronDown,
 };

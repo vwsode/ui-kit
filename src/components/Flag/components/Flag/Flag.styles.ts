@@ -1,3 +1,4 @@
+import { isString } from 'lodash';
 import styled, { css } from 'styled-components';
 
 import { TESTING_DATA_ATTRIBUTE } from '@/constants/TestUtils';
@@ -9,7 +10,6 @@ import { composeTestingPath } from '@/utils';
 import { FlagSelector } from './constants';
 
 import type { FlagAppearance, StyledButtonIconProps, StyledExpendedAreaProps, StyledFlagProps } from './types';
-import { isString } from 'lodash';
 
 const getFlagAppearanceStyles = (appearance: FlagAppearance, theme: ThemeType) => {
   const { colors } = theme;
@@ -17,32 +17,32 @@ const getFlagAppearanceStyles = (appearance: FlagAppearance, theme: ThemeType) =
   switch (appearance) {
     case 'normal': {
       return css`
-        background-color: ${colors.colorElevationSurfaceOverlayDefault};
-        color: ${colors.colorTextSubtle};
+        background-color: ${colors.elevation.surface.overlay.default};
+        color: ${colors.text.subtle};
       `;
     }
     case 'success': {
       return css`
-        background-color: ${colors.colorBackgroundSuccessBoldDefault};
-        color: ${colors.colorTextInverse};
+        background-color: ${colors.background.success.bold.default};
+        color: ${colors.text.inverse};
       `;
     }
     case 'warning': {
       return css`
-        background-color: ${colors.colorBackgroundWarningBoldDefault};
-        color: ${colors.colorTextWarningInverse};
+        background-color: ${colors.background.warning.bold.default};
+        color: ${colors.text.warning.inverse};
       `;
     }
     case 'info': {
       return css`
-        background-color: ${colors.colorBackgroundNeutralBoldDefault};
-        color: ${colors.colorTextInverse};
+        background-color: ${colors.background.neutral.bold.default};
+        color: ${colors.text.inverse};
       `;
     }
     case 'error': {
       return css`
-        background-color: ${colors.colorBackgroundDangerBoldDefault};
-        color: ${colors.colorTextInverse};
+        background-color: ${colors.background.danger.bold.default};
+        color: ${colors.text.inverse};
       `;
     }
   }
@@ -55,6 +55,7 @@ export const Root = styled.div.attrs<StyledFlagProps>(({ testId }) => ({
 }))<StyledFlagProps>`
   width: ${({ fullWidth }) => (fullWidth ? '100%' : `${FLAG_WIDTH}px`)};
   border-radius: ${BorderRadius.SMALL};
+  overflow: hidden;
   padding: ${Spacing.L};
   display: flex;
   box-shadow: ${Shadow.XS};

@@ -11,7 +11,7 @@ import { FlagSelector } from '../Flag/constants';
 export const Content = styled.div.attrs<TestableComponent>(({ testId }) => ({
   [TESTING_DATA_ATTRIBUTE]: composeTestingPath(FlagSelector.CONTENT, testId),
 }))<TestableComponent>`
-  ${textBody}
-  margin-bottom: ${Spacing.S};
+  ${textBody};
+  padding-bottom: ${Spacing.S};
   color: inherit;
 `;

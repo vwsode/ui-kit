@@ -28,7 +28,7 @@ export const Action = styled.button.attrs<StyledFlagActionProps>(({ testId }) =>
   border: none;
   border-radius: ${BorderRadius.SMALL};
 
-  background-color: ${({ theme }) => theme.colors.colorBackgroundInverseSubtleDefault};
+  background-color: ${({ theme }) => theme.colors.background.inverse.subtle.default};
   color: inherit;
 
   text-decoration: none;
@@ -37,17 +37,17 @@ export const Action = styled.button.attrs<StyledFlagActionProps>(({ testId }) =>
 
   &:hover {
     text-decoration: underline;
-    background-color: ${({ theme }) => theme.colors.colorBackgroundInverseSubtleHover};
+    background-color: ${({ theme }) => theme.colors.background.inverse.subtle.hover};
   }
 
   &:focus-visible {
-    outline: ${StrokeWidth.THICK} solid ${({ theme }) => theme.colors.colorBorderFocused};
+    outline: ${StrokeWidth.THICK} solid ${({ theme }) => theme.colors.border.focused};
     outline-offset: ${Spacing.XXS};
     position: relative;
   }
 
   &:active {
     text-decoration: underline;
-    background-color: ${({ theme }) => theme.colors.colorBackgroundInverseSubtlePress};
+    background-color: ${({ theme }) => theme.colors.background.inverse.subtle.press};
   }
 `;

@@ -1,7 +1,8 @@
-import { isString } from 'lodash';
+import { isString, noop } from 'lodash';
 import { FC, useEffect, useRef, useState } from 'react';
 
 import { Icon } from '@/icons';
+import { Duration } from '@/themes';
 
 import { FlagAction } from '../FlagAction';
 import { FlagActions } from '../FlagActions';
@@ -12,34 +13,68 @@ import { ButtonIcon, ExpandedArea, FlagHeader, FlagTitle, Root, Wrapper } from '
 
 import type { FlagProps } from './types';
 
-const FlagComponent: FC<FlagProps> = ({ icon, children, title, testId, fullWidth = false, appearance = 'success' }) => {
+const FlagComponent: FC<FlagProps> = ({
+  icon,
+  children,
+  title,
+  testId,
+  onDismissed = noop,
+  isDismissible = false,
+  fullWidth = false,
+  appearance = 'success',
+}) => {
   const [isExpanded, setIsExpanded] = useState<boolean>(true);
+  const [isChildrenDisplayed, setIsChildrenDisplayed] = useState(isExpanded);
   const [maxHeight, setMaxHeight] = useState<number | 'max-height'>('max-height');
   const contentRef = useRef<HTMLDivElement | null>(null);
 
-  const handleExpend = () => {
-    setIsExpanded((prevState) => !prevState);
+  const handleDismissed = (id: string) => {
+    onDismissed(id);
+  };
+
+  const handleExpand = () => {
+    const newExpandedState = !isExpanded;
+
+    if (newExpandedState) {
+      setIsChildrenDisplayed(true);
+      setMaxHeight(maxHeight);
+    } else {
+      setTimeout(() => {
+        setIsChildrenDisplayed(false);
+      }, Duration.Default);
+      setMaxHeight(0);
+    }
+
+    setIsExpanded(newExpandedState);
   };
 
   useEffect(() => {
-    if (contentRef.current) {
+    if (isChildrenDisplayed && contentRef.current) {
       setMaxHeight(contentRef.current.scrollHeight);
     }
-  }, [children]);
+  }, [isChildrenDisplayed]);
 
   return (
-    <Root appearance={appearance} testId={testId} fullWidth={fullWidth}>
+    <Root appearance={appearance} testId={testId} fullWidth={fullWidth} role="alert">
       {!isString(icon) ? <Icon type={IconMap[appearance]} size={24} /> : icon}
       <Wrapper>
         <FlagHeader>
           {title && <FlagTitle>{title}</FlagTitle>}
-          <ButtonIcon isExpanded={isExpanded} onClick={handleExpend}>
-            <Icon type="chevron-down" size={32} />
-          </ButtonIcon>
+          {!isDismissible ? (
+            <ButtonIcon isExpanded={isExpanded} onClick={handleExpand}>
+              <Icon type="chevron-down" size={32} />
+            </ButtonIcon>
+          ) : (
+            <ButtonIcon onClick={handleDismissed}>
+              <Icon type="editor-close" size={32} />
+            </ButtonIcon>
+          )}
         </FlagHeader>
-        <ExpandedArea aria-expanded={isExpanded} ref={contentRef} isExpanded={isExpanded} maxHeight={maxHeight}>
-          {children}
-        </ExpandedArea>
+        {isChildrenDisplayed && (
+          <ExpandedArea aria-expanded={isExpanded} ref={contentRef} isExpanded={isExpanded} maxHeight={maxHeight}>
+            {children}
+          </ExpandedArea>
+        )}
       </Wrapper>
     </Root>
   );
