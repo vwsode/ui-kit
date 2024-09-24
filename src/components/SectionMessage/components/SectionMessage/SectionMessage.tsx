@@ -5,7 +5,7 @@ import { Icon, IconVariant } from '@/icons';
 
 import { Actions } from '../Actions';
 
-import { SectionMessageIconMap } from './constants';
+import { SectionMessageIconMap, SectionMessageSelector } from './constants';
 import { Root, Content, Title } from './SectionMessage.styles';
 
 import type { SectionMessageProps } from './types';
@@ -14,12 +14,12 @@ const SectionMessageComponent: FC<SectionMessageProps> = ({
   children,
   title,
   testId,
-  icon = 'info',
+  icon,
   appearance = 'information',
 }) => {
   return (
     <Root appearance={appearance} testId={testId}>
-      {!icon && <Icon type={SectionMessageIconMap[appearance]} size={24} />}
+      {!icon && <Icon testId={SectionMessageSelector.ICON} type={SectionMessageIconMap[appearance]} size={24} />}
       {isString(icon) ? <Icon type={icon as IconVariant} size={24} /> : icon}
       <Content testId={testId}>
         <Title testId={testId}>{title}</Title>
