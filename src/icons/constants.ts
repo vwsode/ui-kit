@@ -1,5 +1,6 @@
 import { CheckCircle } from './CheckCircle';
 import { CheckmarkCircle } from './CheckmarkCircle';
+import { ChevronDown } from './ChevronDown';
 import { ChevronLeft } from './ChevronLeft';
 import { ChevronRight } from './ChevronRight';
 import { EditorClose } from './EditorClose';
@@ -27,4 +28,5 @@ export const iconComponentsMap: Record<IconVariant, React.FC<IconBaseProps>> = {
   'check-circle': CheckCircle,
   error: Error,
   'question-circle': QuestionCircle,
+  'chevron-down': ChevronDown,
 };

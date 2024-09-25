@@ -61,6 +61,7 @@ export enum LineHeight {
   XXS = '16px',
   XS = '20px',
   S = '22px',
+  DEFAULT = '24px',
   M = '26px',
   L = '32px',
   XL = '36px',
@@ -88,7 +89,7 @@ export enum Duration {
 }
 
 export enum Shadow {
-  XS = '0px 1px 2px rgba(0, 0, 0, 0.14), 0px 0px 2px rgba(0, 0, 0, 0.12)',
+  XS = '0px 0px 1px rgba(9, 30, 66, 0.31), 0px 8px 12px rgba(9, 30, 66, 0.15)',
   S = '0px 2px 4px rgba(0, 0, 0, 0.14), 0px 0px 2px rgba(0, 0, 0, 0.12)',
   M = '0px 4px 8px rgba(0, 0, 0, 0.14), 0px 0px 2px rgba(0, 0, 0, 0.12)',
   L = '0px 8px 16px rgba(0, 0, 0, 0.14), 0px 0px 2px rgba(0, 0, 0, 0.12)',

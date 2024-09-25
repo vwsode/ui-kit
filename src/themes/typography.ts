@@ -219,3 +219,15 @@ export const textButton = css`
   line-height: ${LineHeight.XS};
   font-weight: ${FontWeight.Medium};
 `;
+
+export const textFlagAction = css`
+  ${defaultText}
+  font-size: ${FontSize.XS};
+  line-height: ${LineHeight.DEFAULT};
+  font-weight: ${FontWeight.Medium};
+`;
+
+export const textFlagTitle = css`
+  ${textBody};
+  font-weight: ${FontWeight.Medium};
+`;

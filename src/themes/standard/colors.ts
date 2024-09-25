@@ -345,20 +345,49 @@ export const Colors = {
   },
 
   background: {
+    neutral: {
+      bold: {
+        default: '#44546F',
+      },
+    },
     information: {
       default: '#E9F2FF',
     },
     success: {
       default: '#DCFFF1',
+      bold: {
+        default: '#1F845A',
+      },
     },
     warning: {
       default: '#FFF7D6',
+      bold: {
+        default: '#F5CD47',
+      },
     },
     danger: {
       default: '#FFECEB',
+      bold: {
+        default: '#C9372C',
+      },
     },
     discovery: {
       default: '#F3F0FF',
+    },
+    inverse: {
+      subtle: {
+        default: hexToRGB('#000000', 0.16),
+        hovered: hexToRGB('#000000', 0.24),
+        focused: '',
+        pressed: hexToRGB('#000000', 0.32),
+      },
+    },
+  },
+  elevation: {
+    surface: {
+      overlay: {
+        default: '#FFFFFF',
+      },
     },
   },
 };

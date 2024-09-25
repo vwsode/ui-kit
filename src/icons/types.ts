@@ -13,9 +13,10 @@ export type IconVariant =
   | 'info'
   | 'check-circle'
   | 'error'
-  | 'question-circle';
+  | 'question-circle'
+  | 'chevron-down';
 
-export type IconSize = 8 | 16 | 20 | 24 | 48 | 96;
+export type IconSize = 8 | 16 | 20 | 24 | 32 | 48 | 96;
 
 export type IconBaseProps = {
   /**
