@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 
 import { Button } from './components/Button';
 import { Flag, FlagGroup } from './components/Flag';
@@ -52,9 +52,12 @@ export default function App() {
     setFlags((prev) => [generateFlagData(flags.length), ...prev]);
   };
 
-  const removeFlag = () => {
-    // setFlags()
-  };
+  const dismissFlag = useCallback(
+    (id: string) => {
+      setFlags((current) => current.filter((flag) => flag.id !== id));
+    },
+    [setFlags],
+  );
 
   return (
     <ThemeProvider themeName="standard">
@@ -64,7 +67,7 @@ export default function App() {
         </Button>
         <FlagGroup>
           {flags.map((flag) => (
-            <Flag key={flag.id} title={flag.title} id={flag.id} appearance={flag.type}>
+            <Flag onDismissed={dismissFlag} key={flag.id} title={flag.title} id={flag.id} appearance={flag.type}>
               <Flag.Content>{flag.description}</Flag.Content>
               <Flag.Actions>
                 <Flag.Action>Create one</Flag.Action>

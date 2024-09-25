@@ -1,5 +1,5 @@
 import { isString, noop } from 'lodash';
-import { FC, useEffect, useRef, useState } from 'react';
+import { FC, useCallback, useEffect, useRef, useState } from 'react';
 
 import { Icon } from '@/icons';
 import { Duration } from '@/themes';
@@ -18,6 +18,7 @@ const FlagComponent: FC<FlagProps> = ({
   children,
   title,
   testId,
+  id,
   onDismissed = noop,
   isDismissible = false,
   fullWidth = false,
@@ -28,9 +29,9 @@ const FlagComponent: FC<FlagProps> = ({
   const [maxHeight, setMaxHeight] = useState<number | 'max-height'>('max-height');
   const contentRef = useRef<HTMLDivElement | null>(null);
 
-  const handleDismissed = (id: string) => {
+  const handleDismissed = useCallback(() => {
     onDismissed(id);
-  };
+  }, [onDismissed, id]);
 
   const handleExpand = () => {
     const newExpandedState = !isExpanded;
