@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 import { TESTING_DATA_ATTRIBUTE } from '@/constants/TestUtils';
+import { BorderRadius, Font, FontSize, FontWeight, LineHeight, Spacing } from '@/themes';
+import { WithTheme } from '@/types/styles';
 import { composeTestingPath } from '@/utils';
 
 import { CodeSelector } from './constants';
 
 import type { TestableComponent } from '@/types/controls';
-import { BorderRadius, Font, FontSize, FontWeight, LineHeight, Spacing } from '@/themes';
-import { WithTheme } from '@/types/styles';
 
 export const Root = styled.span.attrs<WithTheme<TestableComponent>>(({ testId }) => ({
   [TESTING_DATA_ATTRIBUTE]: composeTestingPath(CodeSelector.CODE, testId),
