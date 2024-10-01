@@ -317,13 +317,13 @@ export const Colors = {
     },
   },
   border: {
-    default: hexToRGB('091E42', 0.14),
+    default: hexToRGB('#091E42', 0.14),
     bold: '#758195',
     inverse: '#FFFFFF',
-    disabled: hexToRGB('091E42', 0.06),
+    disabled: hexToRGB('#091E42', 0.06),
     focused: '#388BFF',
     selected: '#0C66E4',
-    input: hexToRGB('091E42', 0.14),
+    input: hexToRGB('#091E42', 0.14),
     brand: '#0C66E4',
     danger: '#E2483D',
     warning: '#E56910',
@@ -346,6 +346,7 @@ export const Colors = {
 
   background: {
     neutral: {
+      default: hexToRGB('#091E42', 0.06),
       bold: {
         default: '#44546F',
       },
