@@ -15,7 +15,8 @@ export const Field = styled.div.attrs<FieldStyledProps>(({ testId }) => ({
   border-style: solid;
   border-color: ${({ theme, appearance }) => (appearance === 'standard' ? theme.colors.border.input : 'transparent')};
 
-  display: flex;
+  width: ${({ fullWidth }) => (fullWidth ? '100%' : 'auto')};
+  display: ${({ fullWidth }) => (fullWidth ? 'flex' : 'inline-flex')};
   justify-content: space-between;
 
   background-color: ${({ theme }) => theme.colors.background.input.default};
