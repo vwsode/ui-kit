@@ -12,6 +12,7 @@ const meta: Meta<typeof TextField> = {
     isCompact: false,
     isMonospaced: false,
     appearance: 'standard',
+    fullWidth: true,
   },
   parameters: {
     layout: 'centered',
@@ -29,4 +30,46 @@ type Story = StoryObj<typeof TextField>;
 
 export const Default: Story = {
   args: {},
+};
+
+export const Subtle: Story = {
+  args: {
+    appearance: 'subtle',
+  },
+};
+
+export const None: Story = {
+  args: {
+    appearance: 'none',
+  },
+};
+
+export const Invalid: Story = {
+  args: {
+    isInvalid: true,
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    isDisabled: true,
+  },
+};
+
+export const Compact: Story = {
+  args: {
+    isCompact: true,
+  },
+};
+
+export const Monospaced: Story = {
+  args: {
+    isMonospaced: true,
+  },
+};
+
+export const FullWidth: Story = {
+  args: {
+    fullWidth: true,
+  },
 };
