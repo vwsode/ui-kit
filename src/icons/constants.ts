@@ -12,7 +12,7 @@ import { More } from './More';
 import { QuestionCircle } from './QuestionCircle';
 import { Spinner } from './Spinner/Spinner';
 import { IconBaseProps, IconVariant } from './types';
-import { Warning } from './Warning';
+import { Warning } from './warning';
 
 export const iconComponentsMap: Record<IconVariant, React.FC<IconBaseProps>> = {
   'checkrmark-circle': CheckmarkCircle,
