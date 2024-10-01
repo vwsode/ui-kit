@@ -383,6 +383,12 @@ export const Colors = {
         pressed: hexToRGB('#000000', 0.32),
       },
     },
+    disabled: hexToRGB('#091E42', 0.03),
+    input: {
+      default: '#FFFFFF',
+      hovered: '#F7F8F9',
+      pressed: '#FFFFFF',
+    },
   },
   elevation: {
     surface: {
