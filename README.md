@@ -11,7 +11,7 @@
 - [x] Button
 - [x] ButtonGroup
 - [ ] Calendar
-- [ ] Code
+- [x] Code
 - [ ] CodeBlock
 - [ ] DatePicker
 - [ ] DateTimePicker
@@ -29,14 +29,14 @@
 - [ ] ModalDialog
 - [ ] PageHeader
 - [ ] PageLayout
-- [ ] Pagination
+- [x] Pagination
 - [ ] Popup
 - [x] ProgressBar
 - [ ] ProgressIndicator
 - [ ] ProgressTracker
 - [x] Radio
 - [x] Range
-- [ ] SectionMessage
+- [x] SectionMessage
 - [ ] Select
 - [x] Spinner
 - [ ] TableTree
@@ -44,7 +44,7 @@
 - [ ] Tag
 - [ ] TagGroup
 - [ ] TextArea
-- [ ] TextField
+- [x] TextField
 - [ ] TimePicker
 - [x] Toggle
 - [ ] Tooltip
