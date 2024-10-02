@@ -1,4 +1,4 @@
-import { ChangeEvent, FocusEvent, KeyboardEvent, MouseEvent, ClipboardEvent } from 'react';
+import { ChangeEvent, InputHTMLAttributes, ReactNode, RefObject } from 'react';
 
 import { TestableComponent } from '@/types/controls';
 
@@ -26,6 +26,11 @@ export type TextFieldProps = {
   isDisabled?: boolean;
 
   /**
+   * Set required for form that the field is part of.
+   */
+  isRequired?: boolean;
+
+  /**
    * Mark the text field as invalid
    */
   isInvalid?: boolean;
@@ -34,11 +39,6 @@ export type TextFieldProps = {
    * Take up the full width of the container
    */
   fullWidth?: boolean;
-
-  /**
-   * Specify the ID of the text field
-   */
-  id?: string;
 
   /**
    * Specify the name of the text field
@@ -51,45 +51,26 @@ export type TextFieldProps = {
   placeholder?: string;
 
   /**
+   * Element before input in text field.
+   */
+  elemBefore?: ReactNode;
+
+  /**
+   * Element after input in text field.
+   */
+  elemAfter?: ReactNode;
+
+  /**
    * Handle change events
    */
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 
   /**
-   * Handle blur events
+   *
    */
-  onBlur?: (event: FocusEvent<HTMLInputElement>) => void;
-
-  /**
-   * Handle focus events
-   */
-  onFocus?: (event: FocusEvent<HTMLInputElement>) => void;
-
-  /**
-   * Handle mouse enter events
-   */
-  onMouseEnter?: (event: MouseEvent<HTMLInputElement>) => void;
-
-  /**
-   * Handle mouse leave events
-   */
-  onMouseLeave?: (event: MouseEvent<HTMLInputElement>) => void;
-
-  /**
-   * Handle key down events
-   */
-  onKeyDown?: (event: KeyboardEvent<HTMLInputElement>) => void;
-
-  /**
-   * Handle key up events
-   */
-  onKeyUp?: (event: KeyboardEvent<HTMLInputElement>) => void;
-
-  /**
-   * Handle paste events
-   */
-  onPaste?: (event: ClipboardEvent<HTMLInputElement>) => void;
-} & TestableComponent;
+  inputRef?: RefObject<HTMLInputElement>;
+} & TestableComponent &
+  Omit<InputHTMLAttributes<HTMLInputElement>, 'disabled'>;
 
 export type FieldStyledProps = {
   isInvalid: boolean;

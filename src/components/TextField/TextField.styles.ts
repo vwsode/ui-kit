@@ -16,7 +16,9 @@ export const Field = styled.div.attrs<FieldStyledProps>(({ testId }) => ({
   border-color: ${({ theme, appearance }) => (appearance === 'standard' ? theme.colors.border.input : 'transparent')};
 
   width: ${({ fullWidth }) => (fullWidth ? '100%' : 'auto')};
+  padding: ${({ isCompact }) => (!isCompact ? `0 ${Spacing.S}` : `0 ${Spacing.S_NUDGE}`)};
   display: ${({ fullWidth }) => (fullWidth ? 'flex' : 'inline-flex')};
+  align-items: center;
   justify-content: space-between;
 
   background-color: ${({ theme }) => theme.colors.background.input.default};
@@ -28,12 +30,14 @@ export const Field = styled.div.attrs<FieldStyledProps>(({ testId }) => ({
     background-color: ${({ theme }) => theme.colors.background.input.hovered};
   }
 
-  &:active {
+  &:active,
+  &:hover:active {
     background-color: ${({ theme }) => theme.colors.background.input.pressed};
     border-color: ${({ theme }) => theme.colors.border.focused};
   }
 
   &:focus-within {
+    background-color: ${({ theme }) => theme.colors.background.input.pressed};
     border-color: ${({ theme }) => theme.colors.border.focused};
   }
 
@@ -82,18 +86,18 @@ export const Field = styled.div.attrs<FieldStyledProps>(({ testId }) => ({
 export const Input = styled.input.attrs<InputStyledProps>(({ testId }) => ({
   [TESTING_DATA_ATTRIBUTE]: composeTestingPath(TextFieldSelector.INPUT, testId),
 }))<InputStyledProps>`
-  padding: 0;
-  width: 100%;
   appearance: none;
   border: none;
   outline: none;
-  background-color: transparent;
 
-  padding: ${({ isCompact }) => (!isCompact ? Spacing.S : `${Spacing.XS} ${Spacing.S_NUDGE}`)};
+  width: 100%;
+  padding: ${({ isCompact }) => (!isCompact ? `${Spacing.S} 0` : `${Spacing.XS} 0`)};
+
   font-family: ${({ isMonospaced }) => (isMonospaced ? Font.Monospace : Font.Base)};
   font-size: ${FontSize.XS};
   line-height: ${LineHeight.XS};
 
+  background-color: transparent;
   color: ${({ theme }) => theme.colors.text.default};
 
   &::placeholder {

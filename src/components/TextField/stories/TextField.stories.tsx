@@ -1,5 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react';
 
+import { Button } from '@/components/Button';
+import { Icon } from '@/icons';
+
 import { TextField } from '../TextField';
 
 const meta: Meta<typeof TextField> = {
@@ -71,5 +74,21 @@ export const Monospaced: Story = {
 export const FullWidth: Story = {
   args: {
     fullWidth: true,
+  },
+};
+
+export const WithSubElements: Story = {
+  render(args) {
+    return (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+        <TextField {...args} />
+        <TextField elemAfter={<Button spacing="compact">Button</Button>} {...args} />
+        <TextField
+          elemBefore={<Icon type="info" size={24} />}
+          elemAfter={<Button spacing="compact">Button</Button>}
+          {...args}
+        />
+      </div>
+    );
   },
 };

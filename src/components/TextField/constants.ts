@@ -1,4 +1,4 @@
 export enum TextFieldSelector {
-  INPUT = 'Input',
-  FIELD = 'InputField',
+  INPUT = 'TextFieldInput',
+  FIELD = 'TextField',
 }
