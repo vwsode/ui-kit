@@ -14,7 +14,8 @@ export type IconVariant =
   | 'check-circle'
   | 'error'
   | 'question-circle'
-  | 'chevron-down';
+  | 'chevron-down'
+  | 'backlog';
 
 export type IconSize = 8 | 16 | 20 | 24 | 32 | 48 | 96;
 

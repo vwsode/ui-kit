@@ -1,3 +1,4 @@
+import { Backlog } from './Backlog';
 import { CheckCircle } from './CheckCircle';
 import { CheckmarkCircle } from './CheckmarkCircle';
 import { ChevronDown } from './ChevronDown';
@@ -29,4 +30,5 @@ export const iconComponentsMap: Record<IconVariant, React.FC<IconBaseProps>> = {
   error: Error,
   'question-circle': QuestionCircle,
   'chevron-down': ChevronDown,
+  backlog: Backlog,
 };
