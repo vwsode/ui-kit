@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { TESTING_DATA_ATTRIBUTE } from '@/constants/TestUtils';
-import { FontSize, LineHeight, Font, BorderRadius, StrokeWidth, Spacing } from '@/themes';
+import { BorderRadius, Font, FontSize, LineHeight, Spacing, StrokeWidth } from '@/themes';
 import { TestableComponent } from '@/types/controls';
 import { composeTestingPath } from '@/utils';
 
@@ -26,6 +26,7 @@ export const Root = styled.button.attrs<TestableComponent>(({ testId }) => ({
   box-sizing: border-box;
 
   color: ${({ theme }) => theme.colors.text.subtle};
+
   &:hover {
     color: ${({ theme }) => theme.colors.text.subtle};
     text-decoration: underline;

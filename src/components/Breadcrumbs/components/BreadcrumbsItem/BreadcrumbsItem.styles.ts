@@ -19,8 +19,11 @@ export const Root = styled.a.attrs<BreadcrumbsItemsStyledProps>(({ testId }) => 
   line-height: ${LineHeight.DEFAULT};
   font-family: ${Font.Base};
   text-decoration: none;
+
   outline: none;
   border-radius: ${BorderRadius.SMALL};
+
+  max-width: ${({ truncationWidth }) => (truncationWidth ? `${truncationWidth}px` : 'auto')};
 
   color: ${({ theme }) => theme.colors.text.subtle};
 
@@ -37,4 +40,11 @@ export const Root = styled.a.attrs<BreadcrumbsItemsStyledProps>(({ testId }) => 
     outline: ${({ theme }) => theme.colors.border.focused} solid ${StrokeWidth.THICK};
     outline-offset: ${Spacing.XXS};
   }
+`;
+
+export const Text = styled.span`
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 1;
 `;
