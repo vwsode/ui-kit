@@ -1,25 +1,28 @@
-import { MouseEvent, Children, cloneElement, FC, useState } from 'react';
+import { Children, cloneElement, FC, MouseEvent, useEffect, useState } from 'react';
 
+import { BreadcrumbsItem } from '../BreadcrumbsItem';
 import { ExpandButton } from '../ExpandButton';
 
 import { List, ListItem, Navigation } from './Breadcrumbs.styles';
 
 import type { BreadcrumbsProps } from '../../types';
 
-export const Breadcrumbs: FC<BreadcrumbsProps> = ({
+const BreadcrumbsComponent: FC<BreadcrumbsProps> = ({
   children,
   onExpand,
   isExpanded: controlledExpanse,
-  maxItems = 8,
   visibleBeforeCollapse = 3,
   visibleAfterCollapse = 2,
 }) => {
-  const [isExpanded, setIsExpanded] = useState<boolean>(
-    typeof controlledExpanse === 'undefined' ? false : controlledExpanse,
-  );
+  const [isExpandedInternal, setIsExpandedInternal] = useState<boolean>(controlledExpanse ?? false);
+
+  const isControlled = typeof controlledExpanse !== 'undefined';
+  const isExpanded = isControlled ? controlledExpanse : isExpandedInternal;
 
   const handleExpand = (event: MouseEvent<Element>) => {
-    if (typeof controlledExpanse !== 'undefined') setIsExpanded(false);
+    if (!isControlled) {
+      setIsExpandedInternal(true);
+    }
 
     onExpand?.(event);
   };
@@ -30,7 +33,10 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
     return Children.toArray(children).length - 1 === index ? cloneElement(item) : item;
   });
 
-  const renderBreadcrumbs = () => {
+  const renderBreadcrumbsWithEllipsis = () => {
+    if (visibleBeforeCollapse + visibleAfterCollapse >= breadcrumbsArray.length) {
+      return breadcrumbsArray;
+    }
     const itemsBefore = breadcrumbsArray.slice(0, visibleBeforeCollapse);
     const itemsAfter = breadcrumbsArray.slice(breadcrumbsArray.length - visibleAfterCollapse, breadcrumbsArray.length);
 
@@ -43,11 +49,21 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
     ];
   };
 
+  useEffect(() => {
+    if (isControlled) {
+      setIsExpandedInternal(controlledExpanse);
+    }
+  }, [controlledExpanse, isControlled]);
+
   return (
-    <Navigation>
-      <List>{isExpanded ? renderBreadcrumbs() : breadcrumbsArray}</List>
+    <Navigation aria-expanded={isExpanded}>
+      <List>{!isExpanded ? renderBreadcrumbsWithEllipsis() : breadcrumbsArray}</List>
     </Navigation>
   );
 };
 
-Breadcrumbs.displayName = 'Breadcrumbs';
+BreadcrumbsComponent.displayName = 'Breadcrumbs';
+
+export const Breadcrumbs = Object.assign(BreadcrumbsComponent, {
+  Item: BreadcrumbsItem,
+});

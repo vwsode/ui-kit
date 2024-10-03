@@ -1,4 +1,4 @@
-import { PropsWithChildren, MouseEvent, ReactNode } from 'react';
+import { MouseEvent, PropsWithChildren, ReactNode } from 'react';
 
 import { IconVariant } from '@/icons';
 
@@ -17,7 +17,9 @@ export type BreadcrumbsProps = {
 
   /**
    * Set the maximum number of breadcrumbs to display.
-   * When there are more than the maximum number, only the first and last will be shown, with an ellipsis in between.
+   * When there are more than the maximum number, only the first and last will be shown, with a ellipsis in between.
+   *
+   * !!! Doesn't work yet.
    */
   maxItems?: number;
 
@@ -71,8 +73,8 @@ export type BreadcrumbsItemProps<C extends React.ElementType> = {
 export type ExpandButtonProps = {
   /**
    *
-   * @param event
-   * @returns
+   * @param {MouseEvent<Element>} event - The mouse event triggered by the click.
+   * @returns void
    */
   onClick?: (event: MouseEvent<Element>) => void;
 } & TestableComponent;
