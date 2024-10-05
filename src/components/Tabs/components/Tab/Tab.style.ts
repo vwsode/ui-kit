@@ -1,10 +1,10 @@
 import styled, { css } from 'styled-components';
 
-import { TESTING_DATA_ATTRIBUTE } from '../../../../constants/TestUtils';
-import { BorderRadius, Spacing } from '../../../../themes';
-import { Colors } from '../../../../themes/standard/colors';
-import { textTab } from '../../../../themes/typography';
-import { composeTestingPath } from '../../../../utils';
+import { TESTING_DATA_ATTRIBUTE } from '@/constants/TestUtils';
+import { BorderRadius, Spacing } from '@/themes';
+import { textTab } from '@/themes/typography';
+import { composeTestingPath } from '@/utils';
+
 import { TabsSelector } from '../../constants';
 
 import type { StyledTabProps } from './types';
@@ -15,14 +15,14 @@ export const StyledTab = styled.div.attrs<StyledTabProps>(({ testId }) => ({
   ${({ isSelected }) => css`
     ${textTab}
     cursor: pointer;
-    color: ${Colors.colorTabText};
+    color: ${({ theme }) => theme.colors.text.subtle};
     padding: ${Spacing.XS} ${Spacing.S};
     position: relative;
     margin-bottom: -${Spacing.XXS};
     outline: none;
 
     &:active {
-      color: ${Colors.colorTabTextPress};
+      color: ${({ theme }) => theme.colors.text.default};
     }
 
     &::before {
@@ -37,23 +37,24 @@ export const StyledTab = styled.div.attrs<StyledTabProps>(({ testId }) => ({
 
     &:hover {
       &::before {
-        background-color: ${Colors.colorTabHover};
+        background-color: ${({ theme }) => theme.colors.border.default};
       }
     }
 
     ${isSelected &&
     css`
-      color: ${Colors.colorTabSelected};
+      color: ${({ theme }) => theme.colors.text.selected};
+
       &::before {
-        background-color: ${Colors.colorTabSelected};
+        background-color: ${({ theme }) => theme.colors.border.selected};
       }
 
       &:hover::before {
-        background-color: ${Colors.colorTabSelected};
+        background-color: ${({ theme }) => theme.colors.border.selected};
       }
 
       &:active {
-        color: ${Colors.colorTabSelected};
+        color: ${({ theme }) => theme.colors.text.selected};
       }
     `}
   `}

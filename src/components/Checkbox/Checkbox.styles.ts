@@ -36,14 +36,14 @@ export const InputBox = styled.span.attrs<TestableComponent>(({ testId }) => ({
 export const RequiredSymbol = styled.span.attrs<TestableComponent>(({ testId }) => ({
   [TESTING_DATA_ATTRIBUTE]: composeTestingPath(CheckboxSelector.REQUIRED_SYMBOL, testId),
 }))<TestableComponent>`
-  color: ${({ theme }) => theme.colors.colorTextDanger};
+  color: ${({ theme }) => theme.colors.text.danger};
 `;
 
 export const Text = styled.span.attrs<StyledTextProps>(({ testId }) => ({
   [TESTING_DATA_ATTRIBUTE]: composeTestingPath(CheckboxSelector.TEXT, testId),
 }))<StyledTextProps>`
   ${textBody}
-  color: ${({ theme, isDisabled }) => (isDisabled ? theme.colors.colorTextDisabled : theme.colors.colorTextDefault)};
+  color: ${({ theme, isDisabled }) => (isDisabled ? theme.colors.text.disabled : theme.colors.text.default)};
 `;
 
 export const Input = styled.input.attrs<StyledCheckboxProps>(({ testId }) => ({
@@ -58,27 +58,27 @@ export const Input = styled.input.attrs<StyledCheckboxProps>(({ testId }) => ({
   height: 100%;
   border-radius: ${BorderRadius.SMALL};
 
-  background-color: ${({ theme }) => theme.colors.backgroundInputDefault};
-  border: ${StrokeWidth.THICK} solid ${({ theme }) => theme.colors.colorBorderInput};
+  background-color: ${({ theme }) => theme.colors.background.input.default};
+  border: ${StrokeWidth.THICK} solid ${({ theme }) => theme.colors.border.input};
 
   transition-property: border-color, background-color;
   transition-duration: ${Duration.Quick}ms;
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.colorBackgroundInputHover};
+    background-color: ${({ theme }) => theme.colors.background.input.hovered};
   }
 
   &:active {
-    background-color: ${({ theme }) => theme.colors.colorBackgroundInputPress};
+    background-color: ${({ theme }) => theme.colors.background.input.pressed};
   }
 
   &:focus-visible {
-    border-color: ${({ theme }) => theme.colors.colorBorderFocused};
+    border-color: ${({ theme }) => theme.colors.border.focused};
   }
 
   &:checked {
-    background-color: ${({ theme }) => theme.colors.colorBackgroundSelectedBoldDefault};
-    border-color: ${({ theme }) => theme.colors.colorBackgroundSelectedBoldDefault};
+    background-color: ${({ theme }) => theme.colors.background.selected.bold.default};
+    border-color: ${({ theme }) => theme.colors.background.selected.bold.default};
 
     &::before {
       content: '';
@@ -86,7 +86,7 @@ export const Input = styled.input.attrs<StyledCheckboxProps>(({ testId }) => ({
   }
 
   &:checked:active {
-    background-color: ${({ theme }) => theme.colors.colorBackgroundSelectedBoldHover};
+    background-color: ${({ theme }) => theme.colors.background.selected.bold.hovered};
   }
 
   &::before {
@@ -97,7 +97,7 @@ export const Input = styled.input.attrs<StyledCheckboxProps>(({ testId }) => ({
     width: ${ARROW_WIDTH}px;
     height: ${ARROW_HEIGHT}px;
 
-    border: solid ${({ theme }) => theme.colors.colorIconInverse};
+    border: solid ${({ theme }) => theme.colors.icon.inverse};
     border-width: 0 ${StrokeWidth.THICK} ${StrokeWidth.THICK} 0;
     opacity: 1;
 
@@ -107,13 +107,13 @@ export const Input = styled.input.attrs<StyledCheckboxProps>(({ testId }) => ({
   ${({ isInvalid }) =>
     isInvalid &&
     css`
-      border-color: ${({ theme }) => theme.colors.colorBorderDanger};
+      border-color: ${({ theme }) => theme.colors.border.danger};
 
       &:checked,
       &:hover,
       &:active,
       &:focus-visible {
-        border-color: ${({ theme }) => theme.colors.colorBorderDanger};
+        border-color: ${({ theme }) => theme.colors.border.danger};
       }
     `}
 
@@ -122,10 +122,10 @@ export const Input = styled.input.attrs<StyledCheckboxProps>(({ testId }) => ({
   &:disabled:active {
     cursor: not-allowed;
     border-color: transparent;
-    background-color: ${({ theme }) => theme.colors.colorBackgroundDisabled};
+    background-color: ${({ theme }) => theme.colors.background.disabled};
 
     &::before {
-      border-color: ${({ theme }) => theme.colors.colorIconDisabled};
+      border-color: ${({ theme }) => theme.colors.icon.disabled};
     }
   }
 
@@ -138,7 +138,7 @@ export const Input = styled.input.attrs<StyledCheckboxProps>(({ testId }) => ({
         top: 50%;
         width: 0;
         height: 8px;
-        border: solid ${({ theme }) => theme.colors.colorIconInverse};
+        border: solid ${({ theme }) => theme.colors.icon.inverse};
         border-width: 0 ${StrokeWidth.THICK} 0 0;
         opacity: 1;
         transform: translate(-50%, -50%) rotate(90deg);

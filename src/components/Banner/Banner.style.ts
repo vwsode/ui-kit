@@ -1,34 +1,38 @@
 import styled, { css } from 'styled-components';
 
-import { TESTING_DATA_ATTRIBUTE } from '../../constants/TestUtils';
-import { Spacing } from '../../themes';
-import { Colors } from '../../themes/standard/colors';
-import { textBanner } from '../../themes/typography';
-import { composeTestingPath } from '../../utils';
+import { TESTING_DATA_ATTRIBUTE } from '@/constants/TestUtils';
+import { Spacing, ThemeType } from '@/themes';
+import { textBanner } from '@/themes/typography';
+import { TestableComponent } from '@/types/controls';
+import { composeTestingPath } from '@/utils';
 
 import { BannerSelector } from './constants';
-import { BannerAppearance, StyledBannerProps } from './types';
-import { TestableComponent } from '../../types/controls';
 
-const colorMap: Record<
-  BannerAppearance,
-  {
-    backgroundColor: string;
-    color: string;
+import type { BannerAppearance, StyledBannerProps } from './types';
+
+const getBannerStyles = (appearance: BannerAppearance, theme: ThemeType) => {
+  const { colors } = theme;
+
+  switch (appearance) {
+    case 'announcement': {
+      return css`
+        background-color: ${colors.background.neutral.bold.default};
+        color: ${colors.text.inverse};
+      `;
+    }
+    case 'error': {
+      return css`
+        background-color: ${colors.background.danger.bold.default};
+        color: ${colors.text.inverse};
+      `;
+    }
+    case 'warning': {
+      return css`
+        background-color: ${colors.background.warning.bold.default};
+        color: ${colors.text.warning.inverse};
+      `;
+    }
   }
-> = {
-  announcement: {
-    backgroundColor: Colors.colorBannerAnnouncement,
-    color: Colors.colorBannerAnnouncementText,
-  },
-  error: {
-    backgroundColor: Colors.colorBannerError,
-    color: Colors.colorBannerErrorText,
-  },
-  warning: {
-    backgroundColor: Colors.colorBannerWarning,
-    color: Colors.colorBannerWarningText,
-  },
 };
 
 export const Root = styled.div.attrs<StyledBannerProps>(({ testId }) => ({
@@ -36,11 +40,7 @@ export const Root = styled.div.attrs<StyledBannerProps>(({ testId }) => ({
 }))<StyledBannerProps>`
   padding: ${Spacing.M};
   width: 100%;
-
-  ${({ appearance }) => css`
-    background-color: ${colorMap[appearance].backgroundColor};
-    color: ${colorMap[appearance].color};
-  `}
+  ${({ theme, appearance }) => getBannerStyles(appearance, theme)};
 `;
 
 export const Wrapper = styled.div`

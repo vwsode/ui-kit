@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 
-import { TESTING_DATA_ATTRIBUTE } from '../../constants/TestUtils';
-import { BorderRadius } from '../../themes';
-import { Colors } from '../../themes/standard/colors';
-import { TestableComponent } from '../../types/controls';
-import { composeTestingPath } from '../../utils';
+import { TESTING_DATA_ATTRIBUTE } from '@/constants/TestUtils';
+import { BorderRadius, Duration, StrokeWidth } from '@/themes';
+import { TestableComponent } from '@/types/controls';
+import { composeTestingPath } from '@/utils';
 
 import { RangeSelector } from './constants';
 
@@ -24,57 +23,57 @@ export const Root = styled.input.attrs<TestableComponent>(({ testId }) => ({
 
   background: linear-gradient(
     to right,
-    ${Colors.colorRangeSliderDefault} var(${SLIDER_WIDTH_VAR}),
+    ${({ theme }) => theme.colors.background.neutral.bold.default} var(${SLIDER_WIDTH_VAR}),
     transparent var(${SLIDER_WIDTH_VAR})
   );
 
   cursor: pointer;
 
   &::-webkit-slider-runnable-track {
-    background-color: ${Colors.colorRangeTrackDefault};
+    background-color: ${({ theme }) => theme.colors.background.neutral.default};
     height: ${TRACK_HEIGHT}px;
     border-radius: ${BorderRadius.SMALL};
 
-    transition: background 100ms;
+    transition: background-color ${Duration.Quick};
   }
 
   &::-webkit-slider-thumb {
     appearance: none;
     width: ${THUMB_WIDTH}px;
     height: ${THUMB_HEIGHT}px;
-    background-color: ${Colors.colorRangeThumbDefault};
+    background-color: ${({ theme }) => theme.colors.background.neutral.bold.default};
     border-radius: ${BorderRadius.CIRCULAR};
     margin-top: ${TRACK_HEIGHT / 2 - THUMB_HEIGHT / 2}px;
 
-    transition: background 100ms;
+    transition: background-color ${Duration.Quick};
   }
 
   &:hover {
     &::-webkit-slider-runnable-track {
-      background-color: ${Colors.colorRangeTrackHover};
+      background-color: ${({ theme }) => theme.colors.background.neutral.default};
     }
   }
 
   &:focus {
     &::-webkit-slider-runnable-track {
-      background-color: ${Colors.colorRangeTrackDefault};
+      background-color: ${({ theme }) => theme.colors.background.neutral.default};
     }
   }
 
   &:focus-visible {
     &::-webkit-slider-thumb {
-      outline: 2px solid ${Colors.colorRangeThumbFocusRing};
+      outline: ${StrokeWidth.THICK} solid ${({ theme }) => theme.colors.border.focused};
       outline-offset: 2px;
     }
   }
 
   &:active {
     &::-webkit-slider-runnable-track {
-      background-color: ${Colors.colorRangeTrackPress};
+      background-color: ${({ theme }) => theme.colors.background.neutral.pressed};
     }
 
     &::-webkit-slider-thumb {
-      background-color: ${Colors.colorRangeThumbPress};
+      background-color: ${({ theme }) => theme.colors.background.neutral.bold.pressed};
     }
   }
 
@@ -83,11 +82,11 @@ export const Root = styled.input.attrs<TestableComponent>(({ testId }) => ({
     opacity: 0.4;
 
     &::-webkit-slider-runnable-track {
-      background-color: ${Colors.colorRangeTrackDisabled};
+      background-color: ${({ theme }) => theme.colors.background.neutral.default};
     }
 
     &::-webkit-slider-thumb {
-      background-color: ${Colors.colorRangeThumbDisabled};
+      background-color: ${({ theme }) => theme.colors.background.neutral.bold.default};
     }
   }
 `;

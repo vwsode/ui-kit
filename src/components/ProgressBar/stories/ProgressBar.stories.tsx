@@ -1,8 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
-import { ProgressBar } from '../ProgressBar';
 import { Colors } from '../../../themes/standard/colors';
+import { ProgressBar } from '../ProgressBar';
 
 const FIGMA_URL =
   'https://www.figma.com/design/iDJVkkFf8pXZGizL3SzI8A/ADS-Components-(Community)?node-id=4633-0&t=oRTvFPj2JL1szxrt-0';
@@ -74,7 +74,7 @@ export const Invert: Story = {
   },
   render: ({ ...args }) => {
     return (
-      <div style={{ backgroundColor: Colors.colorTabSelected, padding: '20px' }}>
+      <div style={{ backgroundColor: Colors.background.selected.bold.default, padding: '20px' }}>
         <ProgressBar {...args} />
       </div>
     );

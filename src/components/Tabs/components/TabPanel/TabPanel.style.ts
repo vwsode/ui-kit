@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
-import { TESTING_DATA_ATTRIBUTE } from '../../../../constants/TestUtils';
-import { TestableComponent } from '../../../../types/controls';
-import { composeTestingPath } from '../../../../utils';
+import { TESTING_DATA_ATTRIBUTE } from '@/constants/TestUtils';
+import { TestableComponent } from '@/types/controls';
+import { composeTestingPath } from '@/utils';
+
 import { TabsSelector } from '../../constants';
 
 export const StyledTabPanel = styled.div.attrs<TestableComponent>(({ testId }) => ({

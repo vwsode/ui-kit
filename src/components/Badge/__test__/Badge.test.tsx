@@ -1,10 +1,10 @@
-import { screen, render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import { ThemeProvider } from '../../../contexts/ThemeContext';
 import { Badge } from '../Badge';
 import { BadgeSelector, DEFAULT_MAX_BADGE_VALUE } from '../constants';
 
-import { MOCK_VALUE, MOCK_MIN_VALUE } from './mock';
+import { MOCK_MIN_VALUE, MOCK_VALUE } from './mock';
 
 describe('Badge component:', () => {
   it('should render with value correctly', () => {
@@ -15,7 +15,7 @@ describe('Badge component:', () => {
     );
 
     expect(screen.getByTestId(BadgeSelector.BADGE)).toBeInTheDocument();
-    expect(screen.getByTestId(BadgeSelector.BAGDE_TEXT)).toHaveTextContent(MOCK_MIN_VALUE.toString());
+    expect(screen.getByTestId(BadgeSelector.BADGE_TEXT)).toHaveTextContent(MOCK_MIN_VALUE.toString());
   });
 
   it('should render with default max value when value exceeds default max', () => {
@@ -26,7 +26,7 @@ describe('Badge component:', () => {
     );
 
     expect(screen.getByTestId(BadgeSelector.BADGE)).toBeInTheDocument();
-    expect(screen.getByTestId(BadgeSelector.BAGDE_TEXT)).toHaveTextContent(`${DEFAULT_MAX_BADGE_VALUE}+`);
+    expect(screen.getByTestId(BadgeSelector.BADGE_TEXT)).toHaveTextContent(`${DEFAULT_MAX_BADGE_VALUE}+`);
   });
 
   it('should render with max value when value exceeds specified max', () => {
@@ -39,7 +39,7 @@ describe('Badge component:', () => {
     );
 
     expect(screen.getByTestId(BadgeSelector.BADGE)).toBeInTheDocument();
-    expect(screen.getByTestId(BadgeSelector.BAGDE_TEXT)).toHaveTextContent(`${max}+`);
+    expect(screen.getByTestId(BadgeSelector.BADGE_TEXT)).toHaveTextContent(`${max}+`);
   });
 
   it('should render with value correctly when max is set to false', () => {
@@ -50,6 +50,6 @@ describe('Badge component:', () => {
     );
 
     expect(screen.getByTestId(BadgeSelector.BADGE)).toBeInTheDocument();
-    expect(screen.getByTestId(BadgeSelector.BAGDE_TEXT)).toHaveTextContent(MOCK_VALUE.toString());
+    expect(screen.getByTestId(BadgeSelector.BADGE_TEXT)).toHaveTextContent(MOCK_VALUE.toString());
   });
 });

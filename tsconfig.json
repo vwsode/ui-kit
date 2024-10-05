@@ -27,6 +27,6 @@
       "@utils/*": ["src/utils/*"]
     }
   },
-  "include": ["vite.config.ts", "src/**/*", "src"],
+  "include": ["vite.config.ts", "src/**/*", "src", "src/typings/styled-components.d.ts"],
   "files": ["global.d.ts"]
 }

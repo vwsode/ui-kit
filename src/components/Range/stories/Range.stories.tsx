@@ -4,7 +4,7 @@ import React from 'react';
 import { Range } from '../Range';
 
 const meta: Meta<typeof Range> = {
-  title: 'Range',
+  title: 'Form/Range',
   component: Range,
   argTypes: {
     value: {
