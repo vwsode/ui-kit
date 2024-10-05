@@ -4,7 +4,7 @@ import React from 'react';
 import { Toggle } from '../Toggle';
 
 const meta: Meta<typeof Toggle> = {
-  title: 'Toggle',
+  title: 'Form/Toggle',
   component: Toggle,
   argTypes: {
     size: {

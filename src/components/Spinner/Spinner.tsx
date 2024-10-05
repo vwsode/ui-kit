@@ -1,17 +1,21 @@
 import React, { FC } from 'react';
+import { useTheme } from 'styled-components';
 
-import { Colors } from '../../themes/standard/colors';
+import { ThemeType } from '@/themes';
+
 import { composeTestingPath } from '../../utils';
 
 import { SpinnerSelector } from './constants';
 import { StyledSpinner } from './Spinner.style';
-import { SpinnerProps, SpinnerSizeMap } from './types';
+import { type SpinnerProps, SpinnerSizeMap } from './types';
 
 export const Spinner: FC<SpinnerProps> = ({ size = 'medium', testId }) => {
+  const theme = useTheme() as ThemeType;
+
   return (
     <StyledSpinner
       type="spinner"
-      fill={Colors.colorSpinner}
+      fill={theme.colors.icon.subtle}
       size={SpinnerSizeMap[size]}
       testId={composeTestingPath(SpinnerSelector.SPINNER, testId)}
     />

@@ -72,15 +72,15 @@ const getAppearanceStyles = (
   switch (appearance) {
     case 'default': {
       return css`
-        background-color: ${colors.colorBackgroundNeutralDefault};
-        color: ${colors.colorTextDefault};
+        background-color: ${colors.background.neutral.default};
+        color: ${colors.text.default};
 
         &:hover {
-          background-color: ${colors.colorBackgroundNeutralHover};
+          background-color: ${colors.background.neutral.hovered};
         }
 
         &:active {
-          background-color: ${colors.colorBackgroundNeutralPress};
+          background-color: ${colors.background.neutral.pressed};
         }
 
         ${isLoading &&
@@ -89,26 +89,26 @@ const getAppearanceStyles = (
 
           &:hover,
           &:active {
-            background-color: ${colors.colorBackgroundNeutralDefault};
+            background-color: ${colors.background.neutral.default};
           }
         `}
       `;
     }
     case 'primary': {
       return css`
-        background-color: ${colors.colorBackgroundBrandBoldDefault};
-        color: ${colors.colorTextInverse};
+        background-color: ${colors.background.brand.bold.default};
+        color: ${colors.text.inverse};
 
         ${IconWrapper} {
-          color: ${colors.colorTextInverse};
+          color: ${colors.icon.inverse};
         }
 
         &:hover {
-          background-color: ${colors.colorBackgroundBrandBoldHover};
+          background-color: ${colors.background.brand.bold.hovered};
         }
 
         &:active {
-          background-color: ${colors.colorBackgroundBrandBoldPress};
+          background-color: ${colors.background.brand.bold.pressed};
         }
 
         ${isLoading &&
@@ -117,7 +117,7 @@ const getAppearanceStyles = (
 
           &:hover,
           &:active {
-            background-color: ${colors.colorBackgroundBrandBoldDefault};
+            background-color: ${colors.background.brand.bold.default};
           }
         `}
       `;
@@ -125,18 +125,18 @@ const getAppearanceStyles = (
     case 'subtle': {
       return css`
         background-color: transparent;
-        color: ${colors.colorTextDefault};
+        color: ${colors.text.default};
 
         ${IconWrapper} {
-          color: ${colors.colorTextDefault};
+          color: ${colors.text.default};
         }
 
         &:hover {
-          background-color: ${colors.colorBackgroundNeutralSubtleHover};
+          background-color: ${colors.background.neutral.subtle.hovered};
         }
 
         &:active {
-          background-color: ${colors.colorBackgroundNeutralSubtlePress};
+          background-color: ${colors.background.neutral.subtle.pressed};
         }
 
         ${isLoading &&
@@ -153,10 +153,10 @@ const getAppearanceStyles = (
     case 'link': {
       return css`
         background-color: transparent;
-        color: ${colors.colorLinkDefault};
+        color: ${colors.link.default};
 
         ${IconWrapper} {
-          color: ${colors.colorLinkDefault};
+          color: ${colors.link.default};
         }
 
         &:hover {
@@ -164,7 +164,7 @@ const getAppearanceStyles = (
         }
 
         &:active {
-          color: ${colors.colorLinkPress};
+          color: ${colors.link.pressed};
           text-decoration: underline;
         }
 
@@ -182,10 +182,10 @@ const getAppearanceStyles = (
     case 'subtle-link': {
       return css`
         background-color: transparent;
-        color: ${colors.colorTextSubtle};
+        color: ${colors.text.subtle};
 
         ${IconWrapper} {
-          color: ${colors.colorTextSubtle};
+          color: ${colors.text.subtle};
         }
 
         &:hover {
@@ -193,7 +193,7 @@ const getAppearanceStyles = (
         }
 
         &:active {
-          color: ${colors.colorTextDefault};
+          color: ${colors.text.default};
           text-decoration: underline;
         }
 
@@ -210,19 +210,19 @@ const getAppearanceStyles = (
     }
     case 'warning': {
       return css`
-        background-color: ${colors.colorBackgroundWarningBoldDefault};
-        color: ${colors.colorTextWarningInverse};
+        background-color: ${colors.background.warning.bold.default};
+        color: ${colors.text.warning.inverse};
 
         ${IconWrapper} {
-          color: ${colors.colorIconWarningInverse};
+          color: ${colors.icon.warning.inverse};
         }
 
         &:hover {
-          background-color: ${colors.colorBackgroundWarningBoldHover};
+          background-color: ${colors.background.warning.bold.hovered};
         }
 
         &:active {
-          background-color: ${colors.colorBackgroundWarningBoldPress};
+          background-color: ${colors.background.warning.bold.pressed};
         }
 
         ${isLoading &&
@@ -231,26 +231,26 @@ const getAppearanceStyles = (
 
           &:hover,
           &:active {
-            background-color: ${colors.colorBackgroundWarningBoldDefault};
+            background-color: ${colors.background.warning.bold.default};
           }
         `}
       `;
     }
     case 'danger': {
       return css`
-        background-color: ${colors.colorBackgroundDangerBoldDefault};
-        color: ${colors.colorTextInverse};
+        background-color: ${colors.background.danger.bold.default};
+        color: ${colors.text.inverse};
 
         ${IconWrapper} {
-          color: ${colors.colorTextInverse};
+          color: ${colors.icon.inverse};
         }
 
         &:hover {
-          background-color: ${colors.colorBackgroundDangerBoldHover};
+          background-color: ${colors.background.danger.bold.hovered};
         }
 
         &:active {
-          background-color: ${colors.colorBackgroundDangerBoldPress};
+          background-color: ${colors.background.danger.bold.pressed};
         }
 
         ${isLoading &&
@@ -259,7 +259,7 @@ const getAppearanceStyles = (
 
           &:hover,
           &:active {
-            background-color: ${colors.colorBackgroundDangerBoldDefault};
+            background-color: ${colors.background.danger.bold.default};
           }
         `}
       `;
@@ -288,7 +288,7 @@ export const Root = styled.button.attrs<ButtonProps>(({ testId }) => ({
   transition-duration: ${Duration.Quick}ms;
 
   &:focus-visible {
-    outline: ${StrokeWidth.THICK} solid ${({ theme }) => theme.colors.colorBorderFocused};
+    outline: ${StrokeWidth.THICK} solid ${({ theme }) => theme.colors.border.focused};
     outline-offset: 2px;
     position: relative;
   }
@@ -302,37 +302,37 @@ export const Root = styled.button.attrs<ButtonProps>(({ testId }) => ({
   ${({ isSelected, theme }) =>
     isSelected &&
     css`
-      background-color: ${theme.colors.colorBackgroundSelectedDefault};
-      color: ${theme.colors.colorTextSelected};
+      background-color: ${theme.colors.background.selected.default};
+      color: ${theme.colors.text.selected};
 
       ${IconWrapper} {
-        color: ${theme.colors.colorTextSelected};
+        color: ${theme.colors.text.selected};
       }
 
       &:hover,
       &:active {
-        background-color: ${theme.colors.colorBackgroundSelectedDefault};
+        background-color: ${theme.colors.background.selected.default};
         text-decoration: none;
-        color: ${theme.colors.colorTextSelected};
+        color: ${theme.colors.text.selected};
       }
     `}
 
     ${({ isDisabled, theme }) =>
     isDisabled &&
     css`
-      background-color: ${theme.colors.colorBackgroundDisabled};
-      color: ${theme.colors.colorTextDisabled};
+      background-color: ${theme.colors.background.disabled};
+      color: ${theme.colors.text.disabled};
       cursor: not-allowed;
 
       ${IconWrapper} {
-        color: ${theme.colors.colorTextDisabled};
+        color: ${theme.colors.icon.disabled};
       }
 
       &:hover,
       &:active {
-        background-color: ${theme.colors.colorBackgroundDisabled};
+        background-color: ${theme.colors.background.disabled};
         text-decoration: none;
-        color: ${theme.colors.colorTextDisabled};
+        color: ${theme.colors.text.disabled};
       }
     `}
 `;

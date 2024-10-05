@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 
-import { TESTING_DATA_ATTRIBUTE } from '../../constants/TestUtils.ts';
-import { BorderRadius, FontSize, LineHeight, Spacing } from '../../themes/theme.ts';
-import { defaultText } from '../../themes/typography.ts';
-import { TestableComponent } from '../../types/controls.ts';
-import { composeTestingPath } from '../../utils';
+import { TESTING_DATA_ATTRIBUTE } from '@/constants/TestUtils.ts';
+import { BorderRadius, FontSize, LineHeight, Spacing } from '@/themes/theme.ts';
+import { defaultText } from '@/themes/typography.ts';
+import { TestableComponent } from '@/types/controls.ts';
+import { composeTestingPath } from '@/utils/comopseTestingPath.ts';
 
 import { RadioSelector } from './constants.ts';
-import { RadioInputProps } from './types.ts';
+
+import type { RadioInputProps } from './types.ts';
 
 const RADIO_WIDTH = 14;
 const RADIO_HEIGHT = 14;
@@ -35,7 +36,7 @@ export const Text = styled.span.attrs<TestableComponent>(({ testId }) => ({
   [TESTING_DATA_ATTRIBUTE]: composeTestingPath(RadioSelector.TEXT, testId),
 }))<TestableComponent>`
   ${defaultText}
-  color: ${(props) => props.theme.colors.colorTextDefault};
+  color: ${({ theme }) => theme.colors.text.default};
   font-size: ${FontSize.XS};
   line-height: ${LineHeight.XS};
 `;
@@ -51,15 +52,12 @@ export const Input = styled.input.attrs<RadioInputProps>(({ testId }) => ({
   width: ${RADIO_WIDTH}px;
   height: ${RADIO_HEIGHT}px;
   border-radius: ${BorderRadius.CIRCULAR};
-  background-color: ${(props) => props.theme.colors.colorBackgroundInputDefault};
+  background-color: ${({ theme }) => theme.colors.background.input.default};
   border-width: 2px;
   border-style: solid;
-  border-color: ${(props) =>
-    props.isInvalid ? props.theme.colors.colorBorderDanger : props.theme.colors.colorBorderInput};
+  border-color: ${({ theme, isInvalid }) => (isInvalid ? theme.colors.border.danger : theme.colors.border.input)};
 
-  transition:
-    background 100ms,
-    border-color 100ms;
+  transition: background 100ms, border-color 100ms;
 
   &::after {
     content: '';
@@ -76,40 +74,39 @@ export const Input = styled.input.attrs<RadioInputProps>(({ testId }) => ({
   }
 
   &:hover {
-    background-color: ${(props) => props.theme.colors.colorBackgroundInputHover};
+    background-color: ${({ theme }) => theme.colors.background.input.hovered};
   }
 
   &:active {
-    background-color: ${(props) => props.theme.colors.colorBackgroundInputPress};
+    background-color: ${({ theme }) => theme.colors.background.input.pressed};
   }
 
   &:focus {
-    border-color: ${(props) => props.theme.colors.colorBorderFocused};
+    border-color: ${({ theme }) => theme.colors.border.focused};
   }
 
   &:checked {
-    background-color: ${(props) => props.theme.colors.colorBackgroundSelectedBold};
-    border-color: ${(props) =>
-      props.isInvalid ? props.theme.colors.colorBorderDanger : props.theme.colors.colorBorderInput};
+    background-color: ${({ theme }) => theme.colors.background.selected.bold.default};
+    border-color: ${({ theme, isInvalid }) => (isInvalid ? theme.colors.border.danger : theme.colors.border.input)};
 
     &::after {
       content: '';
-      background-color: ${(props) => props.theme.colors.colorIconInverse};
+      background-color: ${({ theme }) => theme.colors.icon.inverse};
     }
 
     &:focus {
-      border-color: ${(props) => props.theme.colors.colorBorderFocused};
+      border-color: ${({ theme }) => theme.colors.border.focused};
     }
   }
 
   &:disabled {
     cursor: not-allowed;
-    background-color: ${(props) => props.theme.colors.colorBackgroundDisabled};
-    border-color: ${(props) => props.theme.colors.colorBorderDisabled};
+    background-color: ${({ theme }) => theme.colors.background.disabled};
+    border-color: ${({ theme }) => theme.colors.border.disabled};
 
     &:checked::after {
       content: '';
-      background-color: ${(props) => props.theme.colors.colorIconDisabled};
+      background-color: ${({ theme }) => theme.colors.icon.disabled};
     }
   }
 `;

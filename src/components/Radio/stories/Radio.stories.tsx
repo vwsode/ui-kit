@@ -4,7 +4,7 @@ import React from 'react';
 import { Radio } from '../Radio';
 
 const meta: Meta<typeof Radio> = {
-  title: 'Radio',
+  title: 'Form/Radio',
   component: Radio,
   argTypes: {
     isDisabled: {

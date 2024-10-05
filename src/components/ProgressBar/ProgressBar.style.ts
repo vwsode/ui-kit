@@ -1,26 +1,43 @@
-import styled, { keyframes, css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
-import { TESTING_DATA_ATTRIBUTE } from '../../constants/TestUtils';
-import { BorderRadius, Spacing } from '../../themes';
-import { Colors } from '../../themes/standard/colors';
-import { composeTestingPath } from '../../utils';
+import { TESTING_DATA_ATTRIBUTE } from '@/constants/TestUtils';
+import { BorderRadius, Spacing, ThemeType } from '@/themes';
+import { composeTestingPath } from '@/utils';
 
 import { ProgressBarSelector } from './constants';
-import { StyledRootProps, StyledProgressProps, ProgressBarAppearance } from './types';
 
-const colorMap: Record<ProgressBarAppearance, { bgMain: string; bgProgress: string }> = {
-  default: {
-    bgMain: Colors.colorProgressBarDefaultBg,
-    bgProgress: Colors.colorProgressBarDefaultProgress,
-  },
-  inverse: {
-    bgMain: Colors.colorProgressBarInverseBg,
-    bgProgress: Colors.colorProgressBarInverseProgress,
-  },
-  success: {
-    bgMain: Colors.colorProgressBarSuccessBg,
-    bgProgress: Colors.colorProgressBarSuccessProgress,
-  },
+import type { ProgressBarAppearance, StyledProgressProps, StyledRootProps } from './types';
+
+const getProgressBarStyles = (appearance: ProgressBarAppearance, theme: ThemeType) => {
+  const { colors } = theme;
+
+  switch (appearance) {
+    case 'default': {
+      return colors.background.neutral.default;
+    }
+    case 'inverse': {
+      return colors.background.inverse.subtle.default;
+    }
+    case 'success': {
+      return colors.background.success.bold.default;
+    }
+  }
+};
+
+const getProgressStyles = (appearance: ProgressBarAppearance, theme: ThemeType) => {
+  const { colors } = theme;
+
+  switch (appearance) {
+    case 'default': {
+      return colors.background.neutral.bold.default;
+    }
+    case 'inverse': {
+      return colors.elevation.surface.default;
+    }
+    case 'success': {
+      return colors.background.success.bold.default;
+    }
+  }
 };
 
 export const loadingFrames = keyframes`
@@ -40,7 +57,7 @@ export const Root = styled.div.attrs<StyledRootProps>(({ testId }) => ({
   position: relative;
   overflow: hidden;
   border-radius: ${BorderRadius.SMALL};
-  background-color: ${({ appearance }) => colorMap[appearance].bgMain};
+  background-color: ${({ theme, appearance }) => getProgressBarStyles(appearance, theme)};
   height: ${Spacing.S_NUDGE};
 `;
 
@@ -56,7 +73,7 @@ export const Progress = styled.span.attrs<StyledProgressProps>(({ testId, isInde
   height: 100%;
   width: ${({ value }) => `${Math.min(value, 100)}%`};
   border-radius: ${BorderRadius.SMALL};
-  background-color: ${({ appearance }) => colorMap[appearance].bgProgress};
+  background-color: ${({ appearance, theme }) => getProgressStyles(appearance, theme)};
 
   ${({ isIndeterminate }) =>
     isIndeterminate &&
