@@ -27,7 +27,7 @@ type Story = StoryObj<typeof KeyboardCommand>;
 export const Basic: Story = {};
 
 export const Example: Story = {
-  render(args) {
+  render() {
     return (
       <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
         <KeyboardCommand command="Ctrl" />
