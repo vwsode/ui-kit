@@ -175,6 +175,128 @@ export const Colors = {
   },
 
   background: {
+    accent: {
+      blue: {
+        subtle: {
+          default: '#579DFF',
+          hovered: '#85B8FF',
+          pressed: '#CCE0FF',
+        },
+        subtler: {
+          default: '#579DFF',
+          hovered: '#85B8FF',
+          pressed: '#CCE0FF',
+        },
+      },
+      green: {
+        subtle: {
+          default: '#4BCE97',
+          hovered: '#7EE2B8',
+          pressed: '#BAF3DB',
+        },
+        subtler: {
+          default: '#579DFF',
+          hovered: '#85B8FF',
+          pressed: '#CCE0FF',
+        },
+      },
+      teal: {
+        subtle: {
+          default: '#6CC3E0',
+          hovered: '#9DD9EE',
+          pressed: '#C6EDFB',
+        },
+        subtler: {
+          default: '#579DFF',
+          hovered: '#85B8FF',
+          pressed: '#CCE0FF',
+        },
+      },
+      purple: {
+        subtle: {
+          default: '#9F8FEF',
+          hovered: '#B8ACF6',
+          pressed: '#DFD8FD',
+        },
+        subtler: {
+          default: '#579DFF',
+          hovered: '#85B8FF',
+          pressed: '#CCE0FF',
+        },
+      },
+      red: {
+        subtle: {
+          default: '#F87168',
+          hovered: '#FD9891',
+          pressed: '#FFD5D2',
+        },
+        subtler: {
+          default: '#579DFF',
+          hovered: '#85B8FF',
+          pressed: '#CCE0FF',
+        },
+      },
+      yellow: {
+        subtle: {
+          default: '#F5CD47',
+          hovered: '#E2B203',
+          pressed: '#CF9F02',
+        },
+        subtler: {
+          default: '#579DFF',
+          hovered: '#85B8FF',
+          pressed: '#CCE0FF',
+        },
+      },
+      orange: {
+        subtle: {
+          default: '#FEA362',
+          hovered: '#FEC195',
+          pressed: '#FEDEC8',
+        },
+        subtler: {
+          default: '#579DFF',
+          hovered: '#85B8FF',
+          pressed: '#CCE0FF',
+        },
+      },
+      magenta: {
+        subtle: {
+          default: '#E774BB',
+          hovered: '#F797D2',
+          pressed: '#FDD0EC',
+        },
+        subtler: {
+          default: '#579DFF',
+          hovered: '#85B8FF',
+          pressed: '#CCE0FF',
+        },
+      },
+      lime: {
+        subtle: {
+          default: '#94C748',
+          hovered: '#B3DF72',
+          pressed: '#D3F1A7',
+        },
+        subtler: {
+          default: '#579DFF',
+          hovered: '#85B8FF',
+          pressed: '#CCE0FF',
+        },
+      },
+      gray: {
+        subtle: {
+          default: '#8590A2',
+          hovered: '#B3B9C4',
+          pressed: '#DCDFE4',
+        },
+        subtler: {
+          default: '#579DFF',
+          hovered: '#85B8FF',
+          pressed: '#CCE0FF',
+        },
+      },
+    },
     selected: {
       default: '#E9F2FF',
       bold: {
