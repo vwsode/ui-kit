@@ -17,7 +17,7 @@ export const Colors = {
     brand: token.blue[700],
     danger: token.red[800],
     warning: {
-      default: '#A54800',
+      default: token.orange[800],
       inverse: token.neutral[1000],
     },
     success: token.green[800],
@@ -29,16 +29,16 @@ export const Colors = {
         bolder: token.red[900],
       },
       orange: {
-        default: '#A54800',
-        bolder: '#702E00',
+        default: token.orange[800],
+        bolder: token.orange[900],
       },
       yellow: {
         default: token.yellow[800],
         bolder: token.yellow[900],
       },
       lime: {
-        default: '#4C6B1F',
-        bolder: '#37471F',
+        default: token.lime[800],
+        bolder: token.lime[900],
       },
       green: {
         default: token.green[800],
@@ -80,7 +80,7 @@ export const Colors = {
     brand: token.blue[700],
     danger: token.red[600],
     warning: {
-      default: '#E56910',
+      default: token.orange[600],
       inverse: token.neutral[1000],
     },
     success: token.green[600],
@@ -88,9 +88,9 @@ export const Colors = {
     information: token.blue[600],
     accent: {
       red: token.red[600],
-      orange: '#E56910',
+      orange: token.orange[600],
       yellow: token.yellow[600],
-      lime: '#6A9A23',
+      lime: token.lime[600],
       green: token.green[600],
       teal: token.teal[600],
       blue: token.blue[600],
@@ -108,16 +108,16 @@ export const Colors = {
     selected: token.blue[700],
     input: token.neutral['300A'],
     brand: token.blue[700],
-    danger: '#E2483D',
-    warning: '#E56910',
+    danger: token.red[600],
+    warning: token.orange[600],
     success: token.green[600],
     discovery: token.purple[600],
     information: token.blue[600],
     accent: {
       red: token.red[600],
-      orange: '#E56910',
+      orange: token.orange[600],
       yellow: token.yellow[600],
-      lime: '#6A9A23',
+      lime: token.lime[600],
       green: token.green[600],
       teal: token.teal[600],
       blue: token.blue[600],
@@ -175,7 +175,7 @@ export const Colors = {
       bold: {
         default: token.yellow[300],
         hovered: token.yellow[500],
-        pressed: '#CF9F02',
+        pressed: token.yellow[600],
       },
     },
     danger: {
