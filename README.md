@@ -7,7 +7,7 @@
 - [x] Badge
 - [x] Banner
 - [ ] Blanket
-- [ ] Breadcrumbs
+- [x] Breadcrumbs
 - [x] Button
 - [x] ButtonGroup
 - [ ] Calendar
@@ -19,7 +19,7 @@
 - [ ] Dropdown menu
 - [ ] DynamicTable
 - [ ] EmptyState
-- [ ] Flag
+- [x] Flag
 - [ ] Heading
 - [x] Icon
 - [ ] InlineDialog
