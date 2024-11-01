@@ -1,4 +1,5 @@
 import { Backlog } from './Backlog';
+import { BitbucketBranches } from './BitbucketBranches';
 import { CheckCircle } from './CheckCircle';
 import { CheckmarkCircle } from './CheckmarkCircle';
 import { ChevronDown } from './ChevronDown';
@@ -31,4 +32,5 @@ export const iconComponentsMap: Record<IconVariant, React.FC<IconBaseProps>> = {
   'question-circle': QuestionCircle,
   'chevron-down': ChevronDown,
   backlog: Backlog,
+  'bitbucket-branches': BitbucketBranches,
 };
