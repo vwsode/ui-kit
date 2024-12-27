@@ -1,8 +1,14 @@
+import { ReactNode } from 'react';
+
 export type PropsWithClassName = {
   /**
    * ClassName
    */
   className?: string;
+};
+
+export type PropsWithChildren = {
+  children?: ReactNode | string;
 };
 
 export type TestableComponent = {
