@@ -30,7 +30,7 @@ export enum StrokeWidth {
 }
 
 export enum Font {
-  Base = 'SF Pro Text, Inter, Segoe UI, sans-serif',
+  Base = 'Inter, Segoe UI, sans-serif',
   Monospace = 'JetBrains Mono, Consolas, Courier',
   Numeric = 'Bahnschrift',
 }

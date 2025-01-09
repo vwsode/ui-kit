@@ -2,10 +2,9 @@ import { hexToRGB } from '../../utils/hexToRgb';
 import { token } from '../tokens/colors';
 
 export const Colors = {
-  // Refactored below
   link: {
-    default: token.blue[700],
-    pressed: token.blue[800],
+    default: token.green[700],
+    pressed: token.green[800],
   },
   text: {
     default: token.neutral[1000],
@@ -13,8 +12,8 @@ export const Colors = {
     subtlest: token.neutral[700],
     inverse: token.neutral[0],
     disabled: token.neutral['400A'],
-    selected: token.blue[700],
-    brand: token.blue[700],
+    selected: token.green[700],
+    brand: token.green[700],
     danger: token.red[800],
     warning: {
       default: token.orange[800],
@@ -22,7 +21,7 @@ export const Colors = {
     },
     success: token.green[800],
     discovery: token.purple[800],
-    information: token.blue[800],
+    information: token.green[800],
     accent: {
       red: {
         default: token.red[800],
@@ -49,8 +48,8 @@ export const Colors = {
         bolder: token.teal[900],
       },
       blue: {
-        default: token.blue[800],
-        bolder: token.blue[900],
+        default: token.green[800], // Заменено на зелёный
+        bolder: token.green[900], // Заменено на зелёный
       },
       purple: {
         default: token.purple[800],
@@ -66,8 +65,8 @@ export const Colors = {
       },
     },
     link: {
-      default: token.blue[700],
-      pressed: token.blue[800],
+      default: token.green[700],
+      pressed: token.green[800],
       visited: token.purple[800],
     },
   },
@@ -76,8 +75,8 @@ export const Colors = {
     subtle: token.neutral[700],
     inverse: token.neutral[0],
     disabled: token.neutral['400A'],
-    selected: token.blue[700],
-    brand: token.blue[700],
+    selected: token.green[700],
+    brand: token.green[700],
     danger: token.red[600],
     warning: {
       default: token.orange[600],
@@ -85,7 +84,7 @@ export const Colors = {
     },
     success: token.green[600],
     discovery: token.purple[600],
-    information: token.blue[600],
+    information: token.green[600],
     accent: {
       red: token.red[600],
       orange: token.orange[600],
@@ -93,7 +92,7 @@ export const Colors = {
       lime: token.lime[600],
       green: token.green[600],
       teal: token.teal[600],
-      blue: token.blue[600],
+      blue: token.green[600], // Заменено на зелёный
       purple: token.purple[600],
       magenta: token.magenta[600],
       gray: token.neutral[600],
@@ -104,15 +103,15 @@ export const Colors = {
     bold: token.neutral[600],
     inverse: token.neutral[0],
     disabled: token.neutral['200A'],
-    focused: token.blue[500],
-    selected: token.blue[700],
+    focused: token.green[500],
+    selected: token.green[700],
     input: token.neutral['300A'],
-    brand: token.blue[700],
+    brand: token.green[700],
     danger: token.red[600],
     warning: token.orange[600],
     success: token.green[600],
     discovery: token.purple[600],
-    information: token.blue[600],
+    information: token.green[600],
     accent: {
       red: token.red[600],
       orange: token.orange[600],
@@ -120,20 +119,19 @@ export const Colors = {
       lime: token.lime[600],
       green: token.green[600],
       teal: token.teal[600],
-      blue: token.blue[600],
+      blue: token.green[600], // Заменено на зелёный
       purple: token.purple[600],
       magenta: token.magenta[600],
       gray: token.neutral[600],
     },
   },
-
   background: {
     selected: {
-      default: token.blue[100],
+      default: token.green[100],
       bold: {
-        default: token.blue[700],
-        hovered: token.blue[800],
-        pressed: token.blue[900],
+        default: token.green[700],
+        hovered: token.green[800],
+        pressed: token.green[900],
       },
     },
     neutral: {
@@ -152,15 +150,15 @@ export const Colors = {
     },
     brand: {
       bold: {
-        default: token.blue[700],
-        hovered: token.blue[800],
-        pressed: token.blue[900],
+        default: token.green[700],
+        hovered: token.green[800],
+        pressed: token.green[900],
       },
     },
     information: {
-      default: token.blue[100],
+      default: token.green[100],
       bold: {
-        default: token.blue[700],
+        default: token.green[700],
       },
     },
     success: {

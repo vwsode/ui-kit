@@ -197,7 +197,7 @@ export const textLozenge = css`
   ${defaultText}
   font-size: 11px;
   line-height: ${LineHeight.XXS};
-  font-weight: ${FontWeight.Bold};
+  font-weight: ${FontWeight.Medium};
 `;
 
 export const textBanner = css`
